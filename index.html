@@ -2,180 +2,325 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Onetimex</title>
-    <link rel="stylesheet" href="main.css">
-    <script src="main.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="main.js">
 </head>
 
 <body>
     <header class="header">
-        <div class="middle-section">
-            <div class="logo-section">
-                <img src="logo1.png" alt="Tata IPL Logo" class="logo">
+        <img src="images/thapa_logo.png" alt="Onetimex logo" class="logo" />
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li><a class="navbar-link" href="#">Trade & Invest</a></li>
+                <li><a class="navbar-link" href="#">Mutual Fund & SIP</a></li>
+                <li class="navbar-link dropdown">
+                    <a href="#">Product</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">AIF (Alternate Investment Funds)</a></li>
+                        <li><a href="#">PMS (Portfolio Management Service)</a></li>
+                        <li><a href="#">IAP (Investment Advisory Portfolio)</a></li>
+                    </ul>
+                </li>
+                <li><a class="navbar-link" href="#">Learn & Blog</a></li>
+                <li><a class="navbar-link" href="#" target="_blank">About</a></li>
+            </ul>
+            <div class="button-container">
+                <button type="button" id="motilal"
+                    class="large-button text-black text-xl font-large bg-lightorange-700 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm text-center me-2 mb-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">Motilal
+                    Oswal</button>
+                <button type="button"
+                    class="large-button text-black text-xl font-large bg-blue-500 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Alice
+                    Blue</button>
+                <button type="button"
+                    class="large-button text-black text-xl font-large bg-purple-500 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm text-center me-2 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">Upstox</button>
             </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search Stocks, News, Reports...">
-                <button class="search" type="submit">Search</button>
-                <button class="demat" onclick="openPopup()">Open Demat Account</button>
-                <div id="background-blur"></div>
-            </div>
+        </nav>
 
-            <div id="demat-registration-popup">
-                <div class="container3">
-                    <div class="left-side">
-                        <div class="info">
-                            <h2>Grow with Onetimex</h2>
-                            <div class="sliding-text">
-                                <p>Invest Wisely, Grow Steadily.</p>
-                                <p>Empower Your Future with Smart Investments.</p>
-                                <p>Harness the Market, Secure Your Wealth.</p>
-                                <p>Building Wealth, One Trade at a Time.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right-side">
-                        <h2 class="h2">Welcome To Onetimex</h2>
-                        <h3 class="h2">Open Free Demat account</h3>
-                        <form class="form">
-                            <div class="flex-column">
-                                <label>Mobile Number</label>
-                            </div>
-                            <div class="inputForm">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
-                                    <g data-name="Layer 3" id="Layer_3">
-                                        <path
-                                            d="M20 2H12C10.343 2 9 3.343 9 5v22c0 1.657 1.343 3 3 3h8c1.657 0 3-1.343 3-3V5c0-1.657-1.343-3-3-3zm-4 26a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4-5H12V7h8v16z" />
-                                    </g>
-                                </svg>
-                                <input placeholder="Enter Mobile Number" class="number" type="tel" />
-                            </div>
-
-                            <div class="flex-column">
-                                <label>OTP</label>
-                            </div>
-                            <div class="inputForm">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="-64 0 512 512" height="20">
-                                    <path
-                                        d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0">
-                                    </path>
-                                    <path
-                                        d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0">
-                                    </path>
-                                </svg>
-                                <input placeholder="Enter OTP" class="otp" type="text" />
-                            </div>
-
-                            <div class="flex-row">
-                                <div>
-                                    <input type="radio" />
-                                    <label>I Agree Terms and Conditions.</label>
-                                    <button class="button-submit">Get OTP</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <!-- ======================================== 
+          button Section 
+    ========================================  -->
+        <button type="button" id="login"
+            class="large-button text-white text-xl font-large bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Login/Signup</button>
 
 
-            <nav class="nav-links">
-                <a href="#trade-invest">Trade & Invest</a>
-                <a href="#mutual-funds">Mutual Funds & SIP</a>
-                <a href="#learn">Learn</a>
-                <a href="#products">Products</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#support">Support</a>
-                <a href="#blog">Live Blog</a>
 
-                <div class="account-section">
-                    <button class="login-button">Login or Signup</button>
-                </div>
-            </nav>
-
-            <div class="right">
-                <button class="motilal">Motilal Oswal</button>
-                <button class="alice">Alice Blue</button>
-                <button class="upstox">Upstox</button>
-            </div>
-            <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="mobile-navbar-btn">
+            <ion-icon name="menu-outline" class="mobile-nav-icon"></ion-icon>
+            <ion-icon name="close-outline" class="mobile-nav-icon"></ion-icon>
         </div>
     </header>
+    <!-- ======================================== 
+          search bar Section 
+    ========================================  -->
+    <div class="search-bar">
+        <form class="max-w-md mx-auto">
+            <label for="default-search"
+                class="mb-1 text-xl font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <div class="relative">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                </div>
+                <input type="search" id="default-search"
+                    class="block w-full p-5 ps-10 text-xl text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Search any Stock, MF...." required />
+                <button type="submit"
+                    class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-xl font-large rounded-lg text-sm px-4 py-3 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+            </div>
+        </form>
+    </div>
 
+    <!-- ======================================== 
+          Our Main Hero Section Start  
+    ========================================  -->
+    <main>
+        <section class="section-hero">
+            <div class="container">
+                <div class="signup">
+                    <h1>Invest Now, Grow With OneTimex</h1>
+                    <p>Open Free Demat Account</p>
+                    <input type="tel" placeholder="+91 Enter your mobile number">
+                    <a href="demat_acc.html">
+                        <button>Sign up</button>
+                    </a>
 
-    <div class="container">
-        <div class="left-section">
-            <h2>About us</h2>
-            <p>Onetimex is a premier online platform dedicated to empowering investors by providing comprehensive tools
-                and resources for trading and investing in the stock market. With a user-friendly interface and advanced
-                analytical features, Onetimex aims to simplify the investment process and help users make informed
-                financial decisions.</p>
-            <p>We offer a wide range of financial products, including stocks, mutual funds, and SIPs, all designed to
-                cater to the diverse needs of our clients. Our mission is to build wealth and financial security for our
-                users by delivering cutting-edge technology, expert insights, and unparalleled customer support.</p>
+                    <p>By signing up, You may also receive a call from an OneTimex representative to help you open the
+                        account.</p>
+                </div>
+                <div class="app-screenshot">
+
+                    <div class="carousel-container">
+                        <div class="carousel">
+                            <img src="[removal.ai]_48454a4e-2eb3-44a0-83ee-26ac554f3cbc-a29fd09b-8b9a-423b-9b86-a99d56ae3fd4.png"
+                                alt="AIF" class="active">
+                            <img src="[removal.ai]_2308ba8e-83c3-49a9-83fe-7bc5163b33f7-23907f48-468f-4140-82d0-e23ece93e67c.png" alt="PMS">
+                            <img src="[removal.ai]_32b84342-0754-46c1-9c02-5c94ec98dde2-7d003a00-c9a7-46e8-b3f1-50a3c8c839cd.png"
+                                alt="IAP">
+                        </div>
+                        <div class="dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================================== 
+          Our Service Section Start  
+    ========================================  -->
+    <section class="section-services">
+        <div class="hero">
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h2><img src="https://mma.prnewswire.com/media/1251803/Motilal_Oswal_Logo.jpg?p=twitter"
+                                    alt=""><br>
+                            </h2>
+                        </div>
+                        <div class="card-back">
+                            <h2>Details</h2>
+                            <p>Motilal Oswal Financial Services Ltd. (MOFSL) is a prominent Indian financial
+                                services company offering a diverse range of services including retail and
+                                institutional broking, wealth management, investment banking, private equity, asset
+                                management, commodity broking, and home finance. Founded in 1987 by Motilal Oswal
+                                and Raamdeo Agrawal, the company has grown significantly over the years and is
+                                well-regarded in the Indian financial sector.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h2><img src="https://asset.brandfetch.io/idH_PAk3wi/idrevizUSI.png" alt=""><br></h2>
+                        </div>
+                        <div class="card-back">
+                            <h2>Details</h2>
+                            <p>Upstox is a leading financial services company in India that provides a
+                                platform for retail investors to trade in stocks, commodities, currencies, mutual
+                                funds, and more. Founded in 2009, Upstox has grown rapidly, leveraging technology to
+                                offer a seamless and user-friendly trading experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h2><img src="https://www.forbesindia.com/media/images/2023/Feb/img_203691_alicebluelogo.png"
+                                    alt=""><br></h2>
+                        </div>
+                        <div class="card-back">
+                            <h2>Details</h2>
+                            <p>Alice Blue is another prominent brokerage firm in India that offers a wide
+                                range of financial services and trading platforms to retail investors. Established
+                                in 2006, Alice Blue has grown to become a significant player in the Indian financial
+                                markets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="right-section">
-            <img src="https://static.toiimg.com/thumb/msid-110686035,width-1280,height-720,resizemode-4,imgsize-88652/110686035.jpg"
-                alt="Stock Animation" class="img-fluid animated-image">
+    </section>
+
+    <!-- ======================================== 
+          container 4 Section  
+    ========================================  -->
+    <div class="container4">
+        <div class="benefit">
+            <div class="benefit-inner">FREE DEMAT ACCOUNT</div>
+        </div>
+        <div class="benefit">
+            <div class="benefit-inner">CALL AND TRADE</div>
+        </div>
+        <div class="benefit">
+            <div class="benefit-inner">ALGO TRADING FACILITY</div>
+        </div>
+        <div class="benefit">
+            <div class="benefit-inner">OPTION TRADING LEARNING</div>
+        </div>
+        <div class="benefit">
+            <div class="benefit-inner">FREE ADVISORY</div>
+        </div>
+        <div class="benefit">
+            <div class="benefit-inner">PORTFOLIO MANAGEMENT</div>
+        </div>
+        <div class="benefit">
+            <div class="benefit-inner">BENEFITS WITH JOIN US</div>
         </div>
     </div>
 
-    <div class="card-container">
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <h2><img src="https://mma.prnewswire.com/media/1251803/Motilal_Oswal_Logo.jpg?p=twitter" alt=""><br>
-                    </h2>
-                </div>
-                <div class="card-back">
-                    <h2>Details</h2>
-                    <p>Motilal Oswal Financial Services Ltd. (MOFSL) is a prominent Indian financial
-                        services company offering a diverse range of services including retail and
-                        institutional broking, wealth management, investment banking, private equity, asset
-                        management, commodity broking, and home finance. Founded in 1987 by Motilal Oswal
-                        and Raamdeo Agrawal, the company has grown significantly over the years and is
-                        well-regarded in the Indian financial sector.</p>
-                </div>
+    <!-- ======================================== 
+          container 1 Section  
+    ========================================  -->
+
+    <div class="container1">
+        <div class="title">Which <span style="color: blue;">type of trader</span> are you?</div>
+        <div class="trader-types">
+            <div class="trader">
+                <a href="https://example.com/day-trader">
+                    <button>
+                        <img src="[removal.ai]_3e0c70e3-3db0-42ba-8c18-f7bc8e818520-screenshot-2024-07-12-154807.png"
+                            alt="Day Trader">
+                        <p class="day-trader">Day Trader</p>
+                    </button>
+                </a>
+            </div>
+            <div class="trader">
+                <a href="https://example.com/momentum-trader">
+                    <button>
+                        <img src="[removal.ai]_96611a19-c6a4-4d92-bfe2-099a85a82109_Screenshot 2024-07-12 154536.png"
+                            alt="Momentum Trader">
+                        <p class="momentum-trader">Momentum Trader</p>
+                    </button>
+                </a>
+            </div>
+            <div class="trader">
+                <a href="https://example.com/option-trader">
+                    <button>
+                        <img src="[removal.ai]_e5fe10bb-88c0-4e01-98af-cd68858425f6-screenshot-2024-07-12-155043.png"
+                            alt="Option Trader">
+                        <p class="option-trader">Option Trader</p>
+                    </button>
+                </a>
+            </div>
+            <div class="trader">
+                <a href="https://example.com/swing-trader">
+                    <button>
+                        <img src="[removal.ai]_d60dc8bf-4662-4b6a-9967-a8a35fe02d58-screenshot-2024-07-12-155342.png"
+                            alt="Swing Trader">
+                        <p class="swing-trader">Swing Trader</p>
+                    </button>
+                </a>
+            </div>
+            <div class="trader">
+                <a href="https://example.com/trend-trader">
+                    <button>
+                        <img src="[removal.ai]_6980d6b1-6ed9-45bf-9022-e5abe9ab95e5-screenshot-2024-07-12-155350.png"
+                            alt="Trend Trader">
+                        <p class="trend-trader">Trend Trader</p>
+                    </button>
+                </a>
+            </div>
+            <div class="trader">
+                <a href="https://example.com/buy-hold-investor">
+                    <button>
+                        <img src="[removal.ai]_031198ba-eaea-42d8-89b7-271afb0d7fbf-screenshot-2024-07-12-155302.png"
+                            alt="Buy & Hold Investor">
+                        <p class="buy-hold-investor">Buy & Hold Investor</p>
+                    </button>
+                </a>
             </div>
         </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <h2><img src="https://asset.brandfetch.io/idH_PAk3wi/idrevizUSI.png" alt=""><br></h2>
+    </div>
+
+    <!-- ======================================== 
+          collections Section  
+    ========================================  -->
+    <h2>Collections</h2>
+    <div class="container5">
+        <button class="collection">
+            <a href="https://google.com">
+                <div class="collection-item">
+                    <img src="[removal.ai]_ceef9589-db20-4165-b08b-6007679acaa4-608d9704099b4b6602abf6e9e94547c6.png"
+                        alt="High return">
+                    <span>High return</span>
                 </div>
-                <div class="card-back">
-                    <h2>Details</h2>
-                    <p>Upstox is a leading financial services company in India that provides a
-                        platform for retail investors to trade in stocks, commodities, currencies, mutual
-                        funds, and more. Founded in 2009, Upstox has grown rapidly, leveraging technology to
-                        offer a seamless and user-friendly trading experience.</p>
-                </div>
+            </a>
+        </button>
+        <button class="collection">
+            <div class="collection-item">
+                <img src="https://www.fintales.in/App_Themes/images/SIP_small_img.svg" alt="SIP with ₹500">
+                <span>SIP with ₹500</span>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <h2><img src="https://www.forbesindia.com/media/images/2023/Feb/img_203691_alicebluelogo.png"
-                            alt=""><br></h2>
-                </div>
-                <div class="card-back">
-                    <h2>Details</h2>
-                    <p>Alice Blue is another prominent brokerage firm in India that offers a wide
-                        range of financial services and trading platforms to retail investors. Established
-                        in 2006, Alice Blue has grown to become a significant player in the Indian financial
-                        markets.</p>
-                </div>
+        </button>
+        <button class="collection">
+            <a href="https://example.com/swing-trader"></a>
+            <div class="collection-item">
+                <img src="[removal.ai]_dd4d7120-3356-4b78-a749-85d7df1ac0f0-wavy_tech-03_single-12.png"
+                    alt="Tax Saving">
+                <span>Tax Saving</span>
             </div>
-        </div>
+        </button>
+        <button class="collection">
+            <div class="collection-item">
+                <img src="[removal.ai]_7044eaa2-ff01-45e4-aedd-84c5d276d98f-lovepik-single-building-png-image_401501527_wh1200.png"
+                    alt="Large Cap">
+                <span>Large Cap</span>
+            </div>
+        </button>
+        <button class="collection">
+            <div class="collection-item">
+                <img src="[removal.ai]_00f9132d-49eb-4b8f-ab95-19a9efdd7b3b-pngtree-stereo-2-5d-small-building-illustration-image_1217320.png"
+                    alt="Mid Cap">
+                <span>Mid Cap</span>
+            </div>
+        </button>
+        <button class="collection">
+            <div class="collection-item">
+                <img src="[removal.ai]_7520c5c8-fb3c-4d9f-b7c2-aedb844d735c-pngtree-d-building-2-5d-villa-2-5d-bungalow-2-5d-house-png-image_3920149.png"
+                    alt="Small Cap">
+                <span>Small Cap</span>
+            </div>
+        </button>
     </div>
 
     <footer>
+        <!-- ======================================== 
+          footer Section  
+    ========================================  -->
         <div class="footer-container">
             <div class="footer-section about">
                 <h2>About Us</h2>
@@ -194,10 +339,14 @@
             <div class="footer-section social">
                 <h2>Follow Us</h2>
                 <div class="social-icons">
-                    <a href="#"><img src="path_to_facebook_icon.png" alt="Facebook"></a>
-                    <a href="#"><img src="path_to_twitter_icon.png" alt="Twitter"></a>
-                    <a href="#"><img src="path_to_instagram_icon.png" alt="Instagram"></a>
-                    <a href="#"><img src="path_to_linkedin_icon.png" alt="LinkedIn"></a>
+                    <a href="#"><img src="https://cdn-icons-png.freepik.com/256/1384/1384053.png?semt=ais_hybrid"
+                            alt="Facebook"></a>
+                    <a href="#"><img src="https://cdn-icons-png.freepik.com/512/124/124021.png" alt="Twitter"></a>
+                    <a href="#"><img
+                            src="https://cdn2.iconfinder.com/data/icons/2018-social-media-app-logos/1000/2018_social_media_popular_app_logo_instagram-512.png"
+                            alt="Instagram"></a>
+                    <a href="#"><img src="https://cdn-icons-png.freepik.com/256/4096/4096186.png?semt=ais_hybrid"
+                            alt="LinkedIn"></a>
                 </div>
             </div>
             <div class="footer-section contact">
@@ -211,6 +360,55 @@
             <p>&copy; 2024 Onetimex. All Rights Reserved.</p>
         </div>
     </footer>
+
+
+
+    <!-- ======================================== 
+          Our JavaScript Section Start  
+    ========================================  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+    <script>
+        const mobile_nav = document.querySelector(".mobile-navbar-btn");
+        const nav_header = document.querySelector(".header");
+        const search_bar = document.querySelector(".search-bar");
+
+        const toggleNavbar = () => {
+            nav_header.classList.toggle("active");
+            search_bar.classList.toggle("search-bar-hidden");
+        };
+
+        mobile_nav.addEventListener("click", () => toggleNavbar());
+
+
+
+        /* Carousel section*/
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+        const dots = document.querySelectorAll('.dot');
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                images[currentIndex].classList.remove('active');
+                dots[currentIndex].classList.remove('active');
+                currentIndex = index;
+                images[currentIndex].classList.add('active');
+                dots[currentIndex].classList.add('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
