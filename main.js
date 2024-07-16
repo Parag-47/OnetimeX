@@ -1,3 +1,4 @@
+AOS.init();
 const mobile_nav = document.querySelector(".mobile-navbar-btn");
 const nav_header = document.querySelector(".header");
 const search_bar = document.querySelector(".search-bar");
@@ -9,9 +10,6 @@ const toggleNavbar = () => {
 
 mobile_nav.addEventListener("click", () => toggleNavbar());
 
-
-
-/* Carousel section*/
 let currentIndex = 0;
 const images = document.querySelectorAll('.carousel img');
 const dots = document.querySelectorAll('.dot');
@@ -35,5 +33,7 @@ dots.forEach((dot, index) => {
     dots[currentIndex].classList.add('active');
   });
 });
+
+
 
 

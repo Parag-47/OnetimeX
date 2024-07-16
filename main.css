@@ -15,7 +15,7 @@ html {
 
 body {
   overflow-x: hidden;
-  
+  background-color: #8bcdff;
 }
 
 .header {
@@ -33,6 +33,7 @@ body {
   width: 100%;
   z-index: 1000;
   /* Ensure the header is above other elements */
+  box-shadow: 10px 10px 30px #000000b0 !important;
 }
 
 .header .logo {
@@ -45,7 +46,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  /* Adjust as needed */
   margin: auto;
   transition: ease-out 0.5s;
 }
@@ -93,14 +93,17 @@ body {
 }
 
 .search-bar {
-  
-  margin-top: 5px;
-  padding-top: 10rem;
+  background-color: #a5d8ff;
+  padding-top: 11rem;
   /* Add padding to avoid overlap with the fixed header */
 }
 
 .search-bar-hidden {
   display: none;
+}
+.text-xl {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
 }
 
 .navbar .dropdown {
@@ -111,8 +114,8 @@ body {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
-  background-color: #ffffff;
+  left: -83px;
+  background-color: rgb(233 245 255);;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   min-width: 250px;
@@ -122,7 +125,6 @@ body {
 
 .navbar .dropdown-menu li {
   padding: 10px 20px;
-
 }
 
 .navbar .dropdown-menu li:hover {
@@ -132,16 +134,18 @@ body {
 .navbar .dropdown:hover .dropdown-menu {
   display: block;
 }
+
 a {
   color: inherit;
   text-decoration: inherit;
   font-size: 2rem;
   font-weight: 500;
 }
-.dropdown-menu li a{
-font-size: 1.5rem;
-color:black;
-cursor:pointer;
+
+.dropdown-menu li a {
+  font-size: 1.5rem;
+  color: black;
+  cursor: pointer;
 }
 
 /* ===========================================
@@ -177,15 +181,14 @@ button Section
   background-color: orange;
 }
 
-
 /* ===========================================
 Hero and Service Section Start
 ======================================= */
 .section-hero,
 .section-services {
-  padding: 50px 0;
-  
-  height: 110vh;
+  padding: 28px 0;
+  background-color: #a5d8ff;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -193,7 +196,7 @@ Hero and Service Section Start
 
 .section-services {
   background: #f3f0ff;
-  padding: 50px 0;
+  padding: 0;
   height: auto;
 }
 
@@ -237,7 +240,7 @@ Hero and Service Section Start
   margin: 25px 0;
   border: 1px solid #ddd;
   border-radius: 30px;
-  font-size: 13px
+  font-size: 13px;
 }
 
 .signup button {
@@ -278,7 +281,6 @@ Hero and Service Section Start
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
-
 }
 
 .carousel img {
@@ -311,7 +313,49 @@ Hero and Service Section Start
   background-color: #717171;
 }
 
-@media (max-width: 768px) {
+/* Media Queries for 900px */
+@media (max-width: 900px) {
+  .header {
+    padding: 0 3rem;
+    height: 8rem;
+  }
+
+  .navbar-list {
+    gap: 5rem;
+  }
+
+  .navbar-link {
+    font-size: 1.8rem;
+  }
+
+  .search-bar {
+    padding-top: 10rem;
+  }
+
+  .container {
+    padding: 30px;
+  }
+}
+
+/* Media Queries for 800px */
+@media (max-width: 800px) {
+  .header {
+    padding: 0 2rem;
+    height: 8rem;
+  }
+
+  .navbar-list {
+    gap: 5rem;
+  }
+
+  .navbar-link {
+    font-size: 1.5rem;
+  }
+
+  .search-bar {
+    padding-top: 9rem;
+  }
+
   .container {
     flex-direction: column;
     padding: 20px;
@@ -324,22 +368,205 @@ Hero and Service Section Start
   .app-screenshot img {
     height: auto;
   }
+
+  .mobile-navbar-btn {
+    display: block;
+  }
 }
 
-@media (max-width: 480px) {
+/* Media Queries for 600px */
+@media (max-width: 600px) {
+  .header {
+    padding: 0 2rem;
+    height: 10rem;
+  }
+
+  .navbar-list {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .navbar-link {
+    font-size: 2.2rem;
+  }
+
+  .mobile-navbar-btn {
+    display: block;
+  }
+
+  .search-bar {
+    padding-top: 8rem;
+  }
+
   .signup h1 {
-    font-size: 20px;
+    font-size: 4rem;
   }
 
   .signup p {
-    font-size: 12px;
+    font-size: 2rem;
+    margin-top: 14px;
   }
 
   .signup input,
   .signup button {
     width: 100%;
   }
+
+  .button-container {
+    flex-direction: column;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .app-screenshot img {
+    height: auto;
+  }
 }
+
+/* Media Queries for 500px */
+@media (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+
+  .header {
+    padding: 0 0.5rem;
+    height: 12rem;
+  }
+
+  .navbar-list {
+    flex-direction: column;
+    gap: 6.5rem;
+  }
+
+  .navbar-link {
+    font-size: 1rem;
+  }
+
+  .search-bar {
+    padding-top: 7rem;
+  }
+
+  .signup h1 {
+    font-size: 4rem;
+  }
+
+  .signup p {
+    font-size: 2rem;
+    margin-top: 14px;
+  }
+
+  .signup input,
+  .signup button {
+    width: 100%;
+  }
+
+  .button-container {
+    flex-direction: column;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .app-screenshot img {
+    height: auto;
+  }
+}
+
+/* Media Queries for 480px */
+@media (max-width: 480px) {
+  .signup h1 {
+    font-size: 3.5rem;
+  }
+
+  .signup p {
+    font-size: 1.5rem;
+    margin-top: 14px;
+  }
+
+  .signup input,
+  .signup button {
+    width: 100%;
+  }
+
+  .button-container {
+    flex-direction: column;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .container {
+    padding: 5px;
+  }
+
+  .app-screenshot img {
+    height: auto;
+  }
+}
+
+/* Media Queries for Extra Small Devices (300px and below) */
+@media (max-width: 300px) {
+  html {
+    font-size: 45%;
+  }
+
+  .header {
+    padding: 0 0.5rem;
+    height: 11rem;
+  }
+
+  .navbar-list {
+    flex-direction: column;
+    gap: 7rem;
+  }
+
+  .navbar-link {
+    font-size: 2rem;
+  }
+
+  .mobile-navbar-btn {
+    display: block;
+  }
+
+  .search-bar {
+    padding-top: 7rem;
+  }
+
+  .signup h1 {
+    font-size: 1.5rem;
+  }
+
+  .signup p {
+    font-size: 1rem;
+  }
+
+  .signup input,
+  .signup button {
+    width: 100%;
+  }
+
+  .button-container {
+    flex-direction: column;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .container {
+    padding: 5px;
+  }
+
+  .app-screenshot img {
+    height: auto;
+  }
+}
+
 
 /*---------------------- cards section------------------------ */
 .card-container {
@@ -348,7 +575,7 @@ Hero and Service Section Start
   justify-content: center;
   gap: 90px;
   padding: 60px;
-  margin-top: 100px;
+  margin-top: 70px;
   margin-bottom: 100px;
 
 }
@@ -407,7 +634,7 @@ Hero and Service Section Start
 }
 
 .card h2 {
-  font-size: 1.5em;
+  font-size: 2.5em;
   margin: 10px 0;
 }
 
@@ -525,17 +752,17 @@ Responsive Codes
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 91%;
+  width: 100%;
   max-width: auto;
   height: 100vh;
   max-height: 2500px;
   position: relative;
   margin: auto;
-  background-color: #e5ffe4;
+  background-color: #77cafe;
   margin: auto;
   margin-bottom: 200px;
   margin-top: 30px;
-  border-radius: 100px;
+  border-radius: 80px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -717,9 +944,10 @@ Responsive Codes
 }
 
 .title {
-  font-size: 50px;
-  margin-bottom: 30px;
-  font-weight: bold;
+  font-size: 55px;
+  margin-bottom: 140px;
+  font-weight: 500;
+  text-align: center;
 }
 
 .trader-types {
@@ -830,7 +1058,7 @@ Responsive Codes
   }
 
   .title {
-    font-size: 25px;
+    font-size: 35px;
   }
 
   .trader img {
@@ -845,7 +1073,7 @@ Responsive Codes
 /* Adjustments for phones */
 @media (max-width: 480px) {
   .title {
-    font-size: 20px;
+    font-size: 35px;
   }
 
   .trader img {
@@ -861,7 +1089,7 @@ Responsive Codes
 /* Adjustments for very small phones */
 @media (max-width: 360px) {
   .title {
-    font-size: 18px;
+    font-size: 35px;
   }
 
   .trader img {
@@ -919,7 +1147,7 @@ Responsive Codes
 }
 
 .collection:hover {
-  background-color: rgba(141, 213, 255, 0.623);
+  background-color: rgb(141, 213, 255);
   cursor: pointer;
 }
 

@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Onetimex</title>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="main.js">
 </head>
@@ -82,9 +84,9 @@
           Our Main Hero Section Start  
     ========================================  -->
     <main>
-        <section class="section-hero">
+        <section class="section-hero" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-offset="300">
             <div class="container">
-                <div class="signup">
+                <div class="signup" data-aos="fade-right">
                     <h1>Invest Now, Grow With OneTimex</h1>
                     <p>Open Free Demat Account</p>
                     <input type="tel" placeholder="+91 Enter your mobile number">
@@ -95,14 +97,15 @@
                     <p>By signing up, You may also receive a call from an OneTimex representative to help you open the
                         account.</p>
                 </div>
-                <div class="app-screenshot">
+                <div class="app-screenshot" data-aos="fade-left">
 
                     <div class="carousel-container">
                         <div class="carousel">
-                            <img src="[removal.ai]_48454a4e-2eb3-44a0-83ee-26ac554f3cbc-a29fd09b-8b9a-423b-9b86-a99d56ae3fd4.png"
+                            <img src="fe534ce2-acdf-4963-aeb8-d7eeb8bb3099-removebg-preview.png"
                                 alt="AIF" class="active">
-                            <img src="[removal.ai]_2308ba8e-83c3-49a9-83fe-7bc5163b33f7-23907f48-468f-4140-82d0-e23ece93e67c.png" alt="PMS">
-                            <img src="[removal.ai]_32b84342-0754-46c1-9c02-5c94ec98dde2-7d003a00-c9a7-46e8-b3f1-50a3c8c839cd.png"
+                            <img src="6361a649-f6c0-447a-98ad-3f6f1ddcc1aa-removebg-preview.png"
+                                alt="PMS">
+                            <img src="b901d944-02c4-4459-9299-254e94c1693e-removebg-preview.png"
                                 alt="IAP">
                         </div>
                         <div class="dots">
@@ -120,17 +123,17 @@
     <!-- ======================================== 
           Our Service Section Start  
     ========================================  -->
-    <section class="section-services">
+    <section class="section-services" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" data-aos-offset="300">
         <div class="hero">
             <div class="card-container">
-                <div class="card">
+                <div class="card" >
                     <div class="card-inner">
                         <div class="card-front">
                             <h2><img src="https://mma.prnewswire.com/media/1251803/Motilal_Oswal_Logo.jpg?p=twitter"
                                     alt=""><br>
                             </h2>
                         </div>
-                        <div class="card-back">
+                        <div class="card-back" >
                             <h2>Details</h2>
                             <p>Motilal Oswal Financial Services Ltd. (MOFSL) is a prominent Indian financial
                                 services company offering a diverse range of services including retail and
@@ -141,7 +144,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" >
                     <div class="card-inner">
                         <div class="card-front">
                             <h2><img src="https://asset.brandfetch.io/idH_PAk3wi/idrevizUSI.png" alt=""><br></h2>
@@ -206,8 +209,8 @@
           container 1 Section  
     ========================================  -->
 
+    <div class="title">Which <span style="color: blue;">type of trader</span> are you?</div>
     <div class="container1">
-        <div class="title">Which <span style="color: blue;">type of trader</span> are you?</div>
         <div class="trader-types">
             <div class="trader">
                 <a href="https://example.com/day-trader">
@@ -371,6 +374,7 @@
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script>
+        AOS.init();
         const mobile_nav = document.querySelector(".mobile-navbar-btn");
         const nav_header = document.querySelector(".header");
         const search_bar = document.querySelector(".search-bar");
