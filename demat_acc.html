@@ -4,104 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upstox Login</title>
+    <title>Demat open form</title>
     <link rel="stylesheet" href="demat_acc.css">
 </head>
 
 <body>
-    <div class="container1" id="login-container">
-        <img src="upstox-logo.png" alt="OneTimex Logo" width="100">
-        <h1>Let's get started</h1>
-        <div class="login-section">
-            <div>
-                <h2>Login with Mobile number</h2>
-                <p>We'll send you a one-time password (OTP) to verify your mobile number.</p>
-                <input type="tel" placeholder="+91 Enter mobile number">
-                <button id="get-otp-button">Get OTP</button>
-            </div>
+    <div class="container">
+        <div class="imageContainer">
+            <img src="https://static.vecteezy.com/system/resources/previews/008/129/174/original/people-trading-at-stock-market-vector.jpg" alt="Image description">
+        </div>
+        <div class="formContainer">
+            <form class="mobile-Form" id="mobileForm">
+                <img src="[removal.ai]_66399c92-94f0-4f4a-a183-30fb7476d933-b2afb360-b79e-42a3-9222-c46acc12bda0.png" alt="Logo" class="logo">
+                <span class="mainHeading">Enter Mobile Number</span>
+                <span class="mainHeading"><span style="font-size: 20px; font-weight: 550; color:orange;" >Open Free Demat Account</span></span>
+                <p class="otpSubheading">We will send a verification code to your Mobile number</p>
+                <input required="required" type="text" class="mobile-input" id="mobileNumber"
+                    placeholder="Enter mobile number">
+                <button class="proceedButton" type="submit">Proceed</button>
+            </form>
 
-            <div class="info">
-                <h2>Grow with Onetimex</h2>
-                <div class="sliding-text">
-                    <p>Invest Wisely, Grow Steadily.</p>
-                    <p>Empower Your Future with Smart Investments.</p>
-                    <p>Harness the Market, Secure Your Wealth.</p>
-                    <p>Building Wealth, One Trade at a Time.</p>
+            <form class="otp-Form" id="otpForm" style="display:none;">
+                <span class="mainHeading">Enter OTP</span>
+                <p class="otpSubheading">We have sent a verification code to your mobile number</p>
+                <div class="inputContainer">
+                    <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input1">
+                    <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input2">
+                    <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input3">
+                    <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input4">
                 </div>
-            </div>
+                <button class="verifyButton" type="button" id="verifyButton">Verify</button>
+                <button class="exitBtn" type="button" onclick="closeOtpForm()">×</button>
+                <p class="resendNote">Didn't receive the code? <button class="resendBtn" type="button">Resend
+                        Code</button></p>
+            </form>
         </div>
-    </div>
-
-    <div class="container1" id="otp-container" style="display: none;">
-        <div class="header">
-            <button id="back-button" style="background: none; border: none; cursor: pointer; font-size: 24px;">
-                &#8592;
-            </button>
-            <img src="upstox-logo.png" alt="OneTimex Logo" width="100">
-        </div>
-        <h1>Verify OTP</h1>
-        <div class="login-section">
-            <div>
-                <h2>Enter OTP</h2>
-                <p>Please enter the OTP sent to your mobile number.</p>
-                <input type="tel" placeholder="Enter OTP">
-                <button>Verify OTP</button>
-            </div>
-
-            <div class="info">
-                <h2>Grow with Onetimex</h2>
-                <div class="sliding-text">
-                    <p>Invest Wisely, Grow Steadily.</p>
-                    <p>Empower Your Future with Smart Investments.</p>
-                    <p>Harness the Market, Secure Your Wealth.</p>
-                    <p>Building Wealth, One Trade at a Time.</p>
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            <p></p>
-        </div>
-    </div>
-
-    <div class="img">
-        <img src="output-onlinegiftools.gif" alt="">
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const slides = document.querySelectorAll('.sliding-text p');
-            let currentSlide = 0;
-
-            function showNextSlide() {
-                slides[currentSlide].classList.remove('show');
-                slides[currentSlide].classList.add('hide');
-
-                currentSlide = (currentSlide + 1) % slides.length;
-
-                slides[currentSlide].classList.remove('hide');
-                slides[currentSlide].classList.add('show');
-            }
-
-            slides[currentSlide].classList.add('show'); // Show the first slide initially
-
-            setInterval(showNextSlide, 3000); // Change slide every 3 seconds
-
-            // Handle OTP verification container toggle
-            const getOtpButton = document.getElementById('get-otp-button');
-            const backButton = document.getElementById('back-button');
-            const loginContainer = document.getElementById('login-container');
-            const otpContainer = document.getElementById('otp-container');
-
-            getOtpButton.addEventListener('click', function () {
-                loginContainer.style.display = 'none';
-                otpContainer.style.display = 'block';
-            });
-
-            backButton.addEventListener('click', function () {
-                otpContainer.style.display = 'none';
-                loginContainer.style.display = 'block';
-            });
+        document.getElementById('mobileForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            document.getElementById('mobileForm').style.display = 'none';
+            document.getElementById('otpForm').style.display = 'flex';
         });
+
+        function closeOtpForm() {
+            document.getElementById('otpForm').style.display = 'none';
+            document.getElementById('mobileForm').style.display = 'flex';
+        }
+        document.getElementById('verifyButton').addEventListener('click', function () {
+            window.location.href = 'register.html';
+        });
+
+
     </script>
 </body>
 

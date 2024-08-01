@@ -17,6 +17,7 @@ body, html {
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Prevents overflow of the image */
+    border-right: 1px solid #d8d8d8;
   }
   
   
@@ -25,6 +26,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #daffda;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
   }
   
   .form {
@@ -36,6 +39,7 @@ body, html {
     width: 100%; /* Full width for smaller screens */
     max-width: 450px; /* Limit max width */
     border-radius: 20px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.082);
   }
   
   ::placeholder {
@@ -74,7 +78,7 @@ body, html {
   }
   
   .inputForm:focus-within {
-    border: 1.5px solid #2d79f3;
+    border: 1.5px solid #ffd015;
   }
   
   .flex-row {
@@ -94,22 +98,30 @@ body, html {
   .span {
     font-size: 14px;
     margin-left: 5px;
-    color: #2d79f3;
+    color: #f3c200;
     font-weight: 500;
     cursor: pointer;
+    text-decoration: none;
   }
+  .span:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
   
   .button-submit {
     margin: 20px 0 10px 0;
-    background-color: #151717;
+    background-color: #ffcb00;
     border: none;
-    color: white;
+    color: black;
     font-size: 15px;
     font-weight: 500;
     border-radius: 10px;
     height: 50px;
     width: 100%;
-    cursor: pointer;
+  }
+  .button-submit:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #ffde5b;
   }
   
   .p {
@@ -136,18 +148,23 @@ body, html {
   }
   
   .btn:hover {
-    border: 1px solid #2d79f3;
+    border: 1px solid #ffcb00;
   }
   
   .logo-section {
     text-align: center;
     margin-bottom: 20px;
   }
+  .logo-section img {
+    width: 120px;
+    height: auto;
+  }
   
   /* Media Queries for Responsiveness */
   @media (max-width: 768px) {
     .container{
       flex-direction: column; /* Stack columns on smaller screens */
+      height: auto;
     }
   
     .left-side {
@@ -156,19 +173,20 @@ body, html {
     }
   
     .right-side img{
-      width: 100%; /* Full width for right side */
+      width: 30%; /* Full width for right side */
       order: 1; /* Keep right side above the left side */
     }
   
     .form {
       padding: 20px; /* Reduce padding for smaller screens */
-      margin: 0 auto; /* Center form */
+      margin: 13px auto; /* Center form */
+      width: 80%
     }
   }
   
   @media (max-width: 480px) {
     .form {
-      width: 90%; /* Make form width responsive */
+      width: 80%; /* Make form width responsive */
       padding: 15px; /* Further reduce padding */
     }
   
