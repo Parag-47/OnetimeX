@@ -29,7 +29,6 @@
         </div>
     </header>
     <nav class="nav-menu">
-
         <div class="close-menu">
             <img src="[removal.ai]_66399c92-94f0-4f4a-a183-30fb7476d933-b2afb360-b79e-42a3-9222-c46acc12bda0.png"
                 alt="Onetimex logo" class="logo" />
@@ -67,18 +66,25 @@
                     account.</p>
             </div>
             <div class="app-screenshot">
-                <div class="carousel-container">
-                    <div class="carousel">
-                        <img src="fe534ce2-acdf-4963-aeb8-d7eeb8bb3099-removebg-preview.png" alt="AIF" class="active">
-                        <img src="6361a649-f6c0-447a-98ad-3f6f1ddcc1aa-removebg-preview.png" alt="PMS">
-                        <img src="b901d944-02c4-4459-9299-254e94c1693e-removebg-preview.png" alt="IAP">
-                    </div>
-                    <div class="dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                </div>
+               <div class="carousel-container">
+    <div class="carousel">
+        <button onclick="window.location.href='register.html'">
+            <img src="fe534ce2-acdf-4963-aeb8-d7eeb8bb3099-removebg-preview.png" alt="AIF" class="active">
+        </button>
+        <button onclick="window.location.href='link-to-pms.html'">
+            <img src="6361a649-f6c0-447a-98ad-3f6f1ddcc1aa-removebg-preview.png" alt="PMS">
+        </button>
+        <button onclick="window.location.href='link-to-iap.html'">
+            <img src="b901d944-02c4-4459-9299-254e94c1693e-removebg-preview.png" alt="IAP">
+        </button>
+    </div>
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
             </div>
         </div>
     </section>
@@ -289,7 +295,7 @@
                     <a href="#"><img src="https://cdn-icons-png.freepik.com/256/1384/1384053.png?semt=ais_hybrid"
                             alt="Facebook"></a>
                     <a href="#"><img src="https://cdn-icons-png.freepik.com/512/124/124021.png" alt="Twitter"></a>
-                    <a href="#"><img
+                    <a href="https://www.instagram.com/onetimex.in?igsh=aTE3bmd0azVmaHg2"><img
                             src="https://cdn2.iconfinder.com/data/icons/2018-social-media-app-logos/1000/2018_social_media_popular_app_logo_instagram-512.png"
                             alt="Instagram"></a>
                     <a href="#"><img src="https://cdn-icons-png.freepik.com/256/4096/4096186.png?semt=ais_hybrid"
@@ -298,9 +304,9 @@
             </div>
             <div class="footer-section contact">
                 <h2>Contact Us</h2>
-                <p>Email: support@onetimex.com</p>
-                <p>Phone: +917045082018</p>
-                <p>Address: 123 Investment Lane, Thane City, India</p>
+                <p>Email: <a href="mailto:onetimexbusiness@gmail.com">onetimexbusiness@gmail.com</a></p>
+                <p>Phone: <a href="tel:+917045035773">+91 7045035773</a></p>
+                <p>Address: Gala no.1 - 1st floor, Savarkar nagar, opposite - gyanoday Vidya Mandir school, beside panchamrut society, Thane 400606</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -339,7 +345,7 @@
             dots[currentIndex].classList.add('active');
         }
 
-        setInterval(showNextImage, 3000); // Change image every 3 seconds
+        setInterval(showNextImage, 2000); // Change image every 2 seconds
 
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
