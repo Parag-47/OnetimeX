@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="logo.png">
+    <title>loan</title>
+</head>
+<style>
+    header {
+        border-bottom: 1px solid #ddd;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        /* Center items horizontally */
+        padding: 10px;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        /* Allow wrapping on smaller screens */
+        position: relative;
+        /* Ensure the header takes full width */
+    }
+
+    header .logo {
+        width: 110px;
+        /* Set width of logo container */
+        height: auto;
+        /* Maintain aspect ratio of the logo image */
+        margin-right: 100px;
+        /* Space between logo and button */
+    }
+
+    header .logo img {
+        max-width: 100%;
+        /* Ensure logo fits within its container */
+        height: auto;
+        /* Maintain aspect ratio */
+        display: block;
+        /* Remove any extra space below the image */
+    }
+
+    header .hamburger-menu {
+        display: none;
+        /* Hide hamburger menu for this layout */
+    }
+
+    header .enquiry-button a {
+        text-decoration: none;
+        /* Remove underline from the link */
+    }
+
+    header .enquiry-button button {
+        background-color: #f3c50f;
+        ;
+        /* Example background color */
+        color: black;
+        /* Example text color */
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    header .enquiry-button button:hover {
+        background-color: #ffdd40;
+        /* Darker background on hover */
+        color: white;
+    }
+
+    .emi-calculator {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 35px;
+    }
+
+    h1 {
+        color: #333333;
+        font-size: 28px;
+        margin-bottom: 30px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .tabs {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    .tab-button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .tab-button.active {
+        background-color: #ffc107;
+    }
+
+    .loan-form {
+        display: none;
+    }
+
+    .loan-form.active {
+        display: block;
+    }
+
+    label {
+        font-weight: bold;
+        margin-top: 20px;
+        display: block;
+        font-size: 14px;
+        color: #555555;
+    }
+
+    input[type="range"] {
+        width: 100%;
+        margin: 10px 0;
+        -webkit-appearance: none;
+        appearance: none;
+        height: 6px;
+        background: #e9ecef;
+        border-radius: 3px;
+        outline: none;
+        transition: background 0.3s ease;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #28a745;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        transition: background 0.3s ease;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #28a745;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        transition: background 0.3s ease;
+    }
+
+    input[type="range"]:hover {
+        background: #dee2e6;
+    }
+
+    p {
+        font-size: 14px;
+        margin: 0;
+        color: #000000;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .emi-result {
+        background-color: #e9ecef;
+        padding: 30px;
+        border-radius: 10px;
+        margin-top: 30px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .emi-result h2 {
+        margin-top: 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #333333;
+        margin-bottom: 10px;
+    }
+
+    .emi-result p {
+        margin: 10px 0;
+        color: #555555;
+        font-size: 16px;
+    }
+
+    .emi-result h3 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #28a745;
+        margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .emi-calculator {
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        label {
+            font-size: 13px;
+        }
+
+        .emi-result h2 {
+            font-size: 18px;
+        }
+
+        .emi-result h3 {
+            font-size: 22px;
+        }
+    }
+
+    /* footer section */
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 40px 0;
+        text-align: center;
+        font-size: 15px;
+        margin-top: auto;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .footer-section {
+        flex: 1;
+        padding: 20px;
+        min-width: 250px;
+    }
+
+    .footer-section h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .footer-section p,
+    .footer-section ul,
+    .footer-section li,
+    .footer-section a {
+        font-size: 1em;
+        line-height: 1.6;
+        color: #bbb;
+        text-decoration: none;
+        margin: 5px 0;
+    }
+
+    .footer-section ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-section .social-icons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-section .social-icons a {
+        margin: 0 10px;
+    }
+
+    .footer-section .social-icons img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.3s;
+    }
+
+    .footer-section .social-icons img:hover {
+        transform: scale(1.2);
+    }
+
+    .footer-bottom {
+        background-color: #222;
+        padding: 20px 0;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+    }
+
+    .rights {
+        text-align: center;
+        color: white;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="[removal.ai]_66399c92-94f0-4f4a-a183-30fb7476d933-b2afb360-b79e-42a3-9222-c46acc12bda0.png"
+                alt="Onetimex logo" class="logo" />
+        </div>
+        <div class="hamburger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+
+    <section class="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center" data-aos="fade-up"
+        data-aos-delay="300" data-aos-duration="1500">
+        <div class="p-8 md:p-12 lg:px-16 lg:py-24">
+            <div class="mx-auto max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+                <p class="hidden text-gray-500 md:mt-4 md:block" data-aos="fade-up">
+                    Onetimex is your trusted partner for comprehensive loan solutions tailored to your unique financial
+                    needs. Whether you're looking for personal loans, home loans, or business financing, Onetimex
+                    provides a range of loan products with competitive interest rates and flexible repayment options.
+                    Our expert team is committed to guiding you through the process, ensuring you find the right loan
+                    that aligns with your financial goals. With Onetimex, securing the funds you need is simple,
+                    efficient, and designed to help you achieve your dreams.
+                </p>
+
+                <div class="mt-4 md:mt-8" data-aos="zoom-in">
+                    <a href="#loan-form"
+                        class="inline-block rounded bg-emerald-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-emerald-700 focus:outline-none focus:ring focus:ring-yellow-400">
+                        Apply Now
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <img alt=""
+            src="https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2021/05/931/506/Credible-places-to-get-personal-loans-iStock-1203814636.jpg?ve=1&tl=1"
+            class="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]" />
+    </section>
+
+    <section class="text-gray-600 body-font" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap">
+            <div class="flex flex-wrap w-full">
+                <div class="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
+                    <div class="flex relative pb-12">
+                        <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                        </div>
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-green-500 inline-flex items-center justify-center text-white relative z-10">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24" data-aos="fade-up">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <path d="M12 12v6"></path>
+                                <path d="M10 14l2 2 2-2"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-grow pl-4" data-aos="fade-up">
+                            <h2 class="font-medium title-font text-lg text-green-700 mb-1 tracking-wider">Instant Loan
+                                Approval</h2>
+                            <p class="leading-relaxed" data-aos="fade-up">Onetimex leverages advanced technology to
+                                offer quick and
+                                efficient loan approvals. Our streamlined process ensures that you receive approval
+                                within minutes, allowing you to access the funds you need without unnecessary delays.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex relative pb-12" data-aos="fade-up">
+                        <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                        </div>
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-green-500 inline-flex items-center justify-center text-white relative z-10">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-grow pl-4">
+                            <h2 class="font-medium title-font text-lg text-green-700 mb-1 tracking-wider">Minimal
+                                Document</h2>
+                            <p class="leading-relaxed">We understand that paperwork can be a hassle, so Onetimex has
+                                minimized the documentation required for loan applications. This not only speeds up the
+                                process but also makes it more convenient, allowing you to focus on your financial goals
+                                rather than getting bogged down in paperwork.</p>
+                        </div>
+                    </div>
+                    <div class="flex relative pb-12">
+                        <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                        </div>
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-green-500 inline-flex items-center justify-center text-white relative z-10">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                <circle cx="12" cy="5" r="3"></circle>
+                                <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-grow pl-4">
+                            <h2 class="font-medium title-font text-lg text-green-600 mb-1 tracking-wider">Competitive
+                                Interest Rates</h2>
+                            <p class="leading-relaxed">Onetimex offers some of the most competitive interest rates in
+                                the market, helping you save money over the life of your loan. Our rates are designed to
+                                be affordable and accessible, making it easier for you to manage your repayments.</p>
+                        </div>
+                    </div>
+                    <div class="flex relative pb-12">
+                        <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                        </div>
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-green-500 inline-flex items-center justify-center text-white relative z-10">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="flex-grow pl-4">
+                            <h2 class="font-medium title-font text-lg text-green-600 mb-1 tracking-wider">Customer
+                                Support and Guidance:</h2>
+                            <p class="leading-relaxed">Our team of financial experts is always available to guide you
+                                through the loan process. We offer personalized advice and support, ensuring you make
+                                informed decisions that align with your financial objectives.</p>
+                        </div>
+                    </div>
+                    <div class="flex relative">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-green-500 inline-flex items-center justify-center text-white relative z-10">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                                <path d="M22 4L12 14.01l-3-3"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-grow pl-4">
+                            <h2 class="font-medium title-font text-lg text-green-600 mb-1 tracking-wider">Secure and
+                                Confidential</h2>
+                            <p class="leading-relaxed">Onetimex prioritizes the security and confidentiality of your
+                                personal information. Our robust security measures ensure that your data is protected
+                                throughout the loan process, giving you peace of mind.</p>
+                        </div>
+                    </div>
+                </div>
+                <img class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12"
+                    src="https://1finance.co.in/magazine/wp-content/uploads/2023/09/26195140_79z_2204_w012_n001_50b_p12_50-1024x683.jpg"
+                    alt="step">
+            </div>
+        </div>
+    </section>
+
+
+    <div class="emi-calculator" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
+        <h1 style="font-size: 35px; font-weight: 600;">EMI Calculator</h1>
+        <div class="tabs" data-aos="zoom-in">
+            <button class="tab-button active" data-loan="personal">Personal Loan</button>
+            <button class="tab-button" data-loan="business">Business Loan</button>
+            <button class="tab-button" data-loan="home">Home Loan</button>
+        </div>
+        <div id="loan-forms">
+            <form id="personal-loan" class="loan-form active">
+                <label for="personal-loan-amount">Select the required Loan Amount</label>
+                <input type="range" id="personal-loan-amount" min="30000" max="500000" value="30000">
+                <p id="personal-loan-amount-value">₹30,000</p>
+
+                <label for="personal-interest-rate">Select the interest rate(p.a)</label>
+                <input type="range" id="personal-interest-rate" min="12" max="21" value="12">
+                <p id="personal-interest-rate-value">12%</p>
+
+                <label for="personal-tenure">Select EMI in Months</label>
+                <input type="range" id="personal-tenure" min="12" max="48" value="12">
+                <p id="personal-tenure-value">12</p>
+            </form>
+
+            <form id="business-loan" class="loan-form">
+                <label for="business-loan-amount">Select the required Loan Amount</label>
+                <input type="range" id="business-loan-amount" min="50000" max="1000000" value="50000">
+                <p id="business-loan-amount-value">₹50,000</p>
+
+                <label for="business-interest-rate">Select the interest rate(p.a)</label>
+                <input type="range" id="business-interest-rate" min="10" max="18" value="10">
+                <p id="business-interest-rate-value">10%</p>
+
+                <label for="business-tenure">Select EMI in Months</label>
+                <input type="range" id="business-tenure" min="12" max="60" value="12">
+                <p id="business-tenure-value">12</p>
+            </form>
+
+            <form id="home-loan" class="loan-form">
+                <label for="home-loan-amount">Select the required Loan Amount</label>
+                <input type="range" id="home-loan-amount" min="100000" max="5000000" value="100000">
+                <p id="home-loan-amount-value">₹1,00,000</p>
+
+                <label for="home-interest-rate">Select the interest rate(p.a)</label>
+                <input type="range" id="home-interest-rate" min="8" max="12" value="8">
+                <p id="home-interest-rate-value">8%</p>
+
+                <label for="home-tenure">Select EMI in Months</label>
+                <input type="range" id="home-tenure" min="60" max="240" value="60">
+                <p id="home-tenure-value">60</p>
+            </form>
+        </div>
+
+        <div class="emi-result">
+            <h2>Your ideal monthly EMI</h2>
+            <p>Principal amount: <span id="principal-amount">₹0</span></p>
+            <p>Interest amount: <span id="interest-amount">₹0</span></p>
+            <p>Total amount payable: <span id="total-amount">₹0</span></p>
+            <p>Tenure (Months): <span id="tenure-months">0</span></p>
+            <h3>Monthly EMI: <span id="monthly-emi">₹0</span></h3>
+        </div>
+    </div>
+
+
+
+    <section id="loan-form" class="bg-gray-100 mb-4">
+        <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+            <!-- Header for the form section -->
+        <h2 class="text-5xl font-900 mb-6 text-gray-900">Fill this Form to get call.</h2>
+            <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
+                <div class="lg:col-span-2 lg:py-12">
+                    <p class="max-w-xl" style="font-size: 17px; font-weight: 400;">
+                        Beyond just providing loans, Onetimex is committed to helping you make informed decisions. Our
+                        financial experts work closely with you to understand your goals, assess your financial
+                        situation, and recommend the best loan options. We pride ourselves on transparency and customer
+                        satisfaction, ensuring that you fully understand the terms and conditions of your loan before
+                        proceeding. With a streamlined application process and swift approval times, Onetimex makes
+                        borrowing straightforward and stress-free. Whether you're starting a new chapter in life or
+                        expanding your business horizons, Onetimex is here to support your financial journey every step
+                        of the way.
+                    </p>
+
+                </div>
+
+                <div class="rounded-lg bg-gray-200 p-8 shadow-lg lg:col-span-3 lg:p-12">
+                    <form action="#" class="space-y-4">
+                        <div>
+                            <label class="sr-only" for="name">Name</label>
+                            <input class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                placeholder="Full Name as Per Your PAN" type="text" id="name" />
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                            <div>
+                                <label class="sr-only" for="email">Email</label>
+                                <input class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Email address"
+                                    type="email" id="email" />
+                            </div>
+
+                            <div>
+                                <label class="sr-only" for="phone">Phone</label>
+                                <input class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Phone Number"
+                                    type="tel" id="phone" />
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
+                            <div>
+                                <label for="Option1"
+                                    class="block w-full cursor-pointer rounded-lg border border-green-900 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                                    tabindex="0">
+                                    <input class="sr-only" id="Option1" type="radio" tabindex="-1" name="option" />
+
+                                    <span class="text-sm"> Personal Loan</span>
+                                </label>
+                            </div>
+
+                            <div>
+                                <label for="Option2"
+                                    class="block w-full cursor-pointer rounded-lg border border-green-900 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                                    tabindex="0">
+                                    <input class="sr-only" id="Option2" type="radio" tabindex="-1" name="option" />
+
+                                    <span class="text-sm">Business Loan</span>
+                                </label>
+                            </div>
+
+                            <div>
+                                <label for="Option3"
+                                    class="block w-full cursor-pointer rounded-lg border border-green-900 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                                    tabindex="0">
+                                    <input class="sr-only" id="Option3" type="radio" tabindex="-1" name="option" />
+
+                                    <span class="text-sm">Home Loan</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="sr-only" for="message">Message</label>
+
+                            <textarea class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Message"
+                                rows="8" id="message"></textarea>
+                        </div>
+
+                        <div class="mt-4">
+                            <button type="submit"
+                                class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- ======================================== 
+          footer Section  
+    ========================================  -->
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>Onetimex is your one-stop solution for all your investment needs. We offer a wide range of financial
+                    products and services to help you achieve your financial goals.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="#"><img src="https://cdn-icons-png.freepik.com/256/1384/1384053.png?semt=ais_hybrid"
+                            alt="Facebook"></a>
+                    <a href="#"><img src="https://cdn-icons-png.freepik.com/512/124/124021.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/onetimex.in?igsh=aTE3bmd0azVmaHg2"><img
+                            src="https://cdn2.iconfinder.com/data/icons/2018-social-media-app-logos/1000/2018_social_media_popular_app_logo_instagram-512.png"
+                            alt="Instagram"></a>
+                    <a href="#"><img src="https://cdn-icons-png.freepik.com/256/4096/4096186.png?semt=ais_hybrid"
+                            alt="LinkedIn"></a>
+                </div>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: <a href="mailto:onetimexbusiness@gmail.com">onetimexbusiness@gmail.com</a></p>
+                <p>Phone: <a href="tel:+917045035773">+91 7045035773</a></p>
+                <p>Address: Gala no.1 - 1st floor, Savarkar nagar, opposite - gyanoday Vidya Mandir school, beside
+                    panchamrut society, Thane 400606</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="rights">&copy; 2024 Onetimex. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duration of animation in milliseconds
+            once: true,     // Whether animation should happen only once - while scrolling down
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-button');
+            const forms = document.querySelectorAll('.loan-form');
+            const rangeInputs = document.querySelectorAll('input[type="range"]');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    forms.forEach(form => form.classList.remove('active'));
+                    document.getElementById(tab.dataset.loan + '-loan').classList.add('active');
+
+                    calculateEMI(); // Recalculate EMI when switching tabs
+                });
+            });
+
+            rangeInputs.forEach(input => {
+                input.addEventListener('input', updateInputValue);
+                input.addEventListener('input', calculateEMI);
+            });
+
+            function updateInputValue(e) {
+                const valueElement = document.getElementById(e.target.id + '-value');
+                if (e.target.id.includes('amount')) {
+                    valueElement.textContent = '₹' + parseInt(e.target.value).toLocaleString();
+                } else if (e.target.id.includes('interest-rate')) {
+                    valueElement.textContent = e.target.value + '%';
+                } else {
+                    valueElement.textContent = e.target.value;
+                }
+            }
+
+            function calculateEMI() {
+                const activeForm = document.querySelector('.loan-form.active');
+                const loanAmount = parseFloat(activeForm.querySelector('input[id$="-loan-amount"]').value);
+                const interestRate = parseFloat(activeForm.querySelector('input[id$="-interest-rate"]').value);
+                const tenure = parseFloat(activeForm.querySelector('input[id$="-tenure"]').value);
+
+                const monthlyInterestRate = (interestRate / 100) / 12;
+                const emi = loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, tenure) / (Math.pow(1 + monthlyInterestRate, tenure) - 1);
+                const totalAmount = emi * tenure;
+                const interestAmount = totalAmount - loanAmount;
+
+                document.getElementById('principal-amount').textContent = '₹' + loanAmount.toLocaleString();
+                document.getElementById('interest-amount').textContent = '₹' + interestAmount.toFixed(2).toLocaleString();
+                document.getElementById('total-amount').textContent = '₹' + totalAmount.toFixed(2).toLocaleString();
+                document.getElementById('tenure-months').textContent = tenure;
+                document.getElementById('monthly-emi').textContent = '₹' + emi.toFixed(2).toLocaleString();
+            }
+
+            calculateEMI(); // Initial calculation
+        });
+
+    </script>
+</body>
+
+</html>

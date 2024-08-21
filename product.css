@@ -1,0 +1,532 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    /* Center items horizontally */
+    padding: 10px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+    position: relative;
+    /* Ensure the header takes full width */
+}
+
+header .logo {
+    width: 110px;
+    /* Set width of logo container */
+    height: auto;
+    /* Maintain aspect ratio of the logo image */
+    margin-right: 100px;
+    /* Space between logo and button */
+}
+
+header .logo img {
+    max-width: 100%;
+    /* Ensure logo fits within its container */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Remove any extra space below the image */
+}
+
+header .hamburger-menu {
+    display: none;
+    /* Hide hamburger menu for this layout */
+}
+
+header .enquiry-button {
+    /* No specific styles needed for alignment */
+}
+
+header .enquiry-button a {
+    text-decoration: none;
+    /* Remove underline from the link */
+}
+
+header .enquiry-button button {
+    background-color: #f3c50f;
+    ;
+    /* Example background color */
+    color: black;
+    /* Example text color */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+header .enquiry-button button:hover {
+    background-color: #ffdd40;
+    /* Darker background on hover */
+    color: white;
+}
+
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    /* Ensure it fits the container */
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 90%;
+    height: 75vh;
+    object-fit: cover;
+    margin: auto
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+    /* Center text in content */
+}
+
+.content h2 {
+    font-size: 2.5rem;
+}
+
+.content p {
+    padding: 20px;
+    text-align: left;
+    margin: auto;
+    font-size: 1rem;
+    line-height: 25px;
+    color: #1a294e;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    max-width: 800px;
+    /* Limit width for readability */
+}
+
+.btn-container {
+    text-align: center;
+    /* Center the button */
+    margin-top: 20px;
+    /* Space above the container */
+}
+
+.btn {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+    color: black;
+    background-color: #e7b900;
+    /* Button background color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #fad648;
+    /* Darker shade on hover */
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .slide img {
+        height: 30vh;
+        /* Adjust for smaller screens */
+    }
+
+    .content p {
+        text-align: left;
+        font-size: 14px;
+        /* Slightly smaller text on small screens */
+        max-width: 90%;
+        /* Reduce width to fit smaller screens */
+        text-align: center;
+        /* Ensure text is centered */
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+
+.product-container {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Keeps the image and details side by side */
+    justify-content: flex-start;
+    /* Aligns content to the start of the container */
+    align-items: flex-start;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+    max-width: auto;
+    /* Set a max width to center the content */
+    margin: 0 auto;
+    background-color: #fffdf3
+}
+
+.product-image {
+    flex: 0 0 50%;
+    /* Ensures the image takes up 50% of the container */
+    max-width: 50%;
+    /* Limits the width to 50% */
+    padding-right: 20px;
+    /* Adds padding to space the image from the details */
+    box-sizing: border-box;
+    /* Ensures padding doesn't affect width */
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+}
+
+
+.benefits {
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+}
+
+.benefits h2 {
+    font-size: 2.5rem;
+    margin-top: 50px;
+    margin-bottom: 45px;
+    width: 95%;
+    /* Use percentage for width */
+}
+
+.benefits ul {
+    list-style-type: none;
+    /* Remove default bullet points */
+    padding-left: 0;
+    /* Remove default padding */
+    line-height: 25px;
+    color: #1a294e;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    width: 95%;
+    /* Use percentage for width */
+    text-align: left;
+    box-sizing: border-box;
+    /* Include padding and border in width calculation */
+}
+
+.benefits ul li {
+    counter-increment: list-counter;
+    /* Increment the counter for each list item */
+    margin-bottom: 20px;
+    /* Space between list items */
+    position: relative;
+    padding-left: 80px;
+    /* Adjust padding to make space for the number */
+    font-size: 1.1rem;
+    color: #1a294e;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+}
+
+.benefits ul li::before {
+    content: counter(list-counter) ". ";
+    position: absolute;
+    left: 5px;
+    top: 14px;
+    font-size: 3rem;
+    font-weight: normal;
+    color: #9b9b9b;
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        flex-wrap: wrap;
+        /* Allows items to wrap in smaller screens */
+        text-align: center;
+    }
+
+    .product-image {
+        flex: 1 1 100%;
+        /* Makes the image full-width */
+        max-width: 100%;
+        /* Ensures the image takes full width */
+        padding-right: 0;
+        /* Removes right padding */
+        margin-bottom: 20px;
+        /* Adds space below the image */
+    }
+
+    .product-details {
+        flex: 1 1 100%;
+        /* Makes the details full-width */
+        max-width: 100%;
+        /* Ensures the details take full width */
+        padding-left: 0;
+        /* Removes left padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-title {
+        font-size: 1.5rem;
+    }
+
+    .price {
+        font-size: 1.2rem;
+    }
+
+    .benefits h2 {
+        font-size: 1.5rem;
+    }
+
+    .benefits ul li {
+        font-size: 1rem;
+    }
+
+    .read-more-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .arrow-down {
+        font-size: 0.8rem;
+    }
+}
+
+
+.contact-container {
+    display: flex;
+     justify-content: space-between;
+     align-items: flex-start;
+     max-width: 1200px;
+     margin: 0 auto;
+    padding: 45px;
+     background-color: #eee;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     flex-wrap: wrap;
+     margin-bottom: 30px;
+     margin-top: 35px;
+ }
+ 
+ .contact-info {
+     flex: 1 1 300px;
+     padding-right: 40px;
+ }
+ 
+ .contact-info p {
+     margin: 0 0 10px;
+     color: #333;
+     line-height: 1.8;
+ }
+ 
+ .phone-number {
+     color: #e91e63;
+     font-weight: bold;
+     font-size: 1.5em;
+ }
+ 
+ .contact-form {
+     flex: 1 1 300px;
+     max-width: 600px;
+     width: 100%;
+ }
+ 
+ .contact-form form {
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .contact-form input,
+ .contact-form textarea,
+ .contact-form button {
+     margin-bottom: 15px;
+     padding: 15px;
+     font-size: 1em;
+     border: 1px solid #ccc;
+     border-radius: 15px;
+     width: 100%;
+     box-sizing: border-box;
+ }
+ 
+ .contact-form .options {
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 15px;
+ }
+ 
+ .contact-form .options label {
+     flex: 1;
+     text-align: center;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 15px;
+     cursor: pointer;
+     margin-right: 10px;
+     position: relative;
+     background-color: #fff;
+     transition: background-color 0.3s ease;
+ }
+ 
+ .contact-form .options label:last-child {
+     margin-right: 0;
+ }
+ 
+ .contact-form .options input {
+     display: none; /* Hide the radio button dot */
+ }
+ 
+ .contact-form .options input:checked + label {
+     background-color: black; /* Change background color when selected */
+   color: white;
+     border-color: #333; /* Change border color when selected */
+ }
+ 
+ 
+ .contact-form textarea {
+     resize: none;
+ }
+ 
+ .contact-form button {
+     background-color: black;
+     color: white;
+     border: none;
+     cursor: pointer;
+ }
+ .social-icons {
+    margin-left: 15px; /* Space between the phone number and social icons */
+}
+
+.social-icons a {
+    color: #000; /* Social media icons in black */
+    margin-right: 10px; /* Space between each social icon */
+    text-decoration: none;
+    font-size: 1.2em; /* Adjust icon size */
+}
+
+.social-icons a:last-child {
+    margin-right: 0; /* Remove margin from the last icon */
+}
+
+.social-icons a:hover {
+    color: #333; /* Darker shade on hover */
+}
+ 
+ .contact-form button:hover {
+     background-color: #333;
+ }
+ 
+ /* Media Queries */
+ @media (max-width: 768px) {
+     .contact-container {
+         flex-direction: column;
+     }
+ 
+     .contact-info {
+         padding-right: 0;
+         margin-bottom: 20px;
+     }
+ }
+ 
+
+/* footer section */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 15px;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+    min-width: 250px;
+}
+
+.footer-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li,
+.footer-section a {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #bbb;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section .social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-section .social-icons a {
+    margin: 0 10px;
+}
+
+.footer-section .social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.footer-section .social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 20px 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+}

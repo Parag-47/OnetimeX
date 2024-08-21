@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OneTimex</title>
+    <title>User login</title>
     <link rel="shortcut icon" type="x-icon" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="main.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <link rel="stylesheet" href="user_profile.css">
 </head>
 
 <body>
-    <header data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
+    <header>
         <div class="logo">
             <img src="[removal.ai]_66399c92-94f0-4f4a-a183-30fb7476d933-b2afb360-b79e-42a3-9222-c46acc12bda0.png"
                 alt="Onetimex logo" class="logo" />
@@ -22,14 +24,39 @@
             <input type="text" placeholder="Search Stocks, Company, Brands etc.">
             <button>Search</button>
         </div>
+
         <div class="user">
-            <span><a href="login.html">Login/Signup</a></span>
+            <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
+                data-dropdown-placement="bottom-start" class="w-10 h-10 rounded-full cursor-pointer"
+                src="https://t3.ftcdn.net/jpg/05/53/79/60/360_F_553796090_XHrE6R9jwmBJUMo9HKl41hyHJ5gqt9oz.jpg"
+                alt="User dropdown">
+
+            <!-- Dropdown menu -->
+            <div id="userDropdown"
+                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                    <div>User Login</div>
+                    <div class="font-medium truncate">name@flowbite.com</div>
+                </div>
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
+                    <li>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                    </li>
+                   
+                </ul>
+                <div class="py-1">
+                    <a href="#"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                        out</a>
+                </div>
+            </div>
         </div>
         <div class="hamburger-menu">
             <i class="fas fa-bars"></i>
         </div>
     </header>
-    <nav class="nav-menu" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
+    <nav class="nav-menu">
         <div class="close-menu">
             <img src="[removal.ai]_66399c92-94f0-4f4a-a183-30fb7476d933-b2afb360-b79e-42a3-9222-c46acc12bda0.png"
                 alt="Onetimex logo" class="logo" />
@@ -64,7 +91,7 @@
         </div>
     </nav>
     <main>
-        <div class="tabs" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
+        <div class="tabs">
             <span><a href="motilal_form.html"><img
                         src="https://arawealth.in/wp-content/uploads/2019/11/mothilaloswal-logo.png"
                         alt="Motilal oswal"></a></span>
@@ -76,28 +103,28 @@
                         alt="Alice Blue"></a></span>
         </div>
     </main>
-    <section class="section-hero" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
-        <div class="container" data-aos="fade-up">
-            <div class="signup" data-aos="fade-up">
+    <section class="section-hero">
+        <div class="container">
+            <div class="signup">
                 <h1>Invest Now, Grow With OneTimex</h1>
                 <p>Open Free Demat Account</p>
                 <input type="tel" placeholder="+91 Enter your mobile number">
                 <a href="demat_acc.html">
-                    <button data-aos="zoom-in">Sign up</button>
+                    <button>Sign up</button>
                 </a>
                 <p>By signing up, You may also receive a call from an OneTimex representative to help you open the
                     account.</p>
             </div>
-            <div class="app-screenshot" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
+            <div class="app-screenshot">
                 <div class="carousel-container">
                     <div class="carousel">
-                        <button onclick="window.location.href='products.html'">
+                        <button onclick="window.location.href='register.html'">
                             <img src="AIF.png" alt="AIF" class="active">
                         </button>
-                        <button onclick="window.location.href='products.html'">
+                        <button onclick="window.location.href='link-to-pms.html'">
                             <img src="PMS.png" alt="PMS">
                         </button>
-                        <button onclick="window.location.href='products.html'">
+                        <button onclick="window.location.href='link-to-iap.html'">
                             <img src="IAP.png" alt="IAP">
                         </button>
                     </div>
@@ -113,8 +140,8 @@
     </section>
 
     <h2>Our Partners</h2>
-    <div class="card-container1">
-        <div class="book">
+    <div class="card-container1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-offset="300">
+        <div class="book" data-aos="fade-right">
             <p><span style="color:orange;"><b>Motilal Oswal</b><br></span>Motilal Oswal Financial Services Ltd. (MOFSL)
                 is a prominent Indian financial
                 services company offering a diverse range of services including retail and
@@ -292,90 +319,8 @@
             </div>
         </div>
     </div>
-
-
-    <div class="header">
-        <h1>Financial Services</h1>
-        <p>Onetimex offers a range of benefits designed to make your financial journey smooth and stress-free. 
-        </p>
-    </div>
-    <div class="cards-container">
-        <a href="loan.html" class="card">
-            <div class="badge badge-buy">CLICK</div>
-            <div class="details">APPLY NOW</div>
-            <h2>PERSONAL LOAN</h2>
-            <div class="locked">
-                <img src="Personal-Loan-for-Self-Employed-removebg-preview.png" alt="Locked">
-            </div>
-        </a></span> 
-        <a href="loan.html" class="card">
-            <div class="badge badge-buy">CLICK</div>
-            <div class="details">APPLY NOW</div>
-            <h2>BUSSINESS LOAN</h2>
-            <div class="locked">
-                <img src="business-loan-removebg-preview.png" alt="Locked">
-            </div>
-        </a>
-         <a href="loan.html" class="card">
-            <div class="badge badge-buy">CLICK</div>
-            <div class="details">APPLY NOW</div>
-            <h2>HOME LOAN</h2>
-            <div class="locked">
-                <img src="https://ruloans-bucket.s3.amazonaws.com/b2c/overview/home-loan.png" alt="Locked">
-            </div>
-        </a>
-        <a href="https://example.com/cgpower" class="card">
-            <div class="badge badge-buy">CLICK</div>
-            <div class="details">APPLY NOW</div>
-            <h2>EQUITY SHARES</h2>
-            <div class="locked">
-                <img src="return-on-investment-concept-financial-solutions-passive-income-successful-trading-man-invests-successfully-investment-strategy-illustration-in-flat-design-for-web-banner-ui-vector-removebg-preview.png" alt="Locked">
-            </div>
-        </a>
-         <a href="https://example.com/cgpower" class="card">
-            <div class="badge badge-buy">CLICK</div>
-            <div class="details">APPLY NOW</div>
-            <h2>MUTUAL FUNDS</h2>
-            <div class="locked">
-                <img src="https://cdni.iconscout.com/illustration/premium/thumb/mutual-fund-investment-illustration-download-in-svg-png-gif-file-formats--colleague-collect-money-business-2-pack-finance-illustrations-3667387.png" alt="Locked">
-            </div>
-        </a>
-         <a href="https://example.com/cgpower" class="card">
-            <div class="badge badge-buy">CLICK</div>
-            <div class="details">APPLY NOW</div>
-            <h2>PMS/AIF</h2>
-            <div class="locked">
-                <img src="https://iventures.in/wp-content/uploads/2019/09/Alternative-Investment-Funds-AIF-1.png" alt="Locked">
-            </div>
-        </a>
-         <a href="https://example.com/cgpower" class="card">
-            <div class="badge badge-buy">CLICK</div>
-            <div class="details">APPLY NOW</div>
-            <h2>HEALTH INSURANCE</h2>
-            <div class="locked">
-                <img src="health-insurance-concept-health-care-finance-and-medical-service-illustration-flat-vector-removebg-preview.png" alt="Locked">
-            </div>
-        </a>
-         <a href="https://example.com/cgpower" class="card">
-            <div class="badge badge-buy">CLICK</div>
-            <div class="details">APPLY NOW</div>
-            <h2>LIFE INSURANCE</h2>
-            <div class="locked">
-                <img src="a6e71fc0d8b01750ac44ede8877e2158-removebg-preview.png" alt="Locked">
-            </div>
-        </a>
-         <a href="https://example.com/cgpower" class="card">
-            <div class="badge badge-buy">CLICK</div>
-            <div class="details">APPLY NOW</div>
-            <h2>TERM INSURANCE</h2>
-            <div class="locked">
-                <img src="https://www.probusinsurance.com/wp-content/uploads/2021/09/term-insurance.png" alt="Locked">
-            </div>
-        </a>
-    </div>
     
-
-
+    
     <footer>
         <!-- ======================================== 
           footer Section  
