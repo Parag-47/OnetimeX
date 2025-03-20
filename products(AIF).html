@@ -1,0 +1,691 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
+
+  <style>
+    body {
+      font-family: Poppins, sans-serif;
+    }
+  </style>
+</head>
+
+<body class="max-w-[1920px] mx-auto">
+  <div class="bg-gradient-to-r from-orange-400 to-green-400 text-black text-[15px]">
+    <header class='py-4 px-4 sm:px-10 z-50 min-h-[70px]'>
+      <div class='relative flex flex-wrap items-center gap-4'>
+        <a href="main.html" target="_blank"><img src="logo//logo.png" alt="logo" class='w-[120px]' />
+        </a>
+
+        <div id="collapseMenu"
+          class='max-lg:hidden lg:!block max-lg:fixed max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50 z-50'>
+          <button id="toggleClose" class='lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3'>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 fill-black" viewBox="0 0 320.591 320.591">
+              <path
+                d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                data-original="#000000"></path>
+              <path
+                d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                data-original="#000000"></path>
+            </svg>
+          </button>
+
+          <ul
+            class='lg:ml-12 lg:flex gap-x-6 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
+            <li class='mb-6 hidden max-lg:block'>
+              <a href="main.html" target="_blank"><img src="logo//logo.png" alt="logo" class='w-[130px]' />
+              </a>
+            </li>
+            <li class='max-lg:border-b max-lg:py-3 px-3'>
+              <a href='main.html' target="_blank"
+                class='hover:text-green-700 text-green-600 block font-semibold transition-all'>Home</a>
+            </li>
+            <li class='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
+                class='hover:text-green-600 block font-semibold transition-all'>Trade & Invest</a>
+            </li>
+            <li class='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
+                class='hover:text-green-600 block font-semibold transition-all'>Mutual Fund & SIP</a></li>
+            <li class="max-lg:border-b max-lg:py-3 px-3 relative group" id="productsMenu">
+              <a href="javascript:void(0)" class="hover:text-green-600 block font-semibold transition-all">Products</a>
+              <ul class="dropdown absolute left-0 hidden bg-white text-black border mt-2 py-2 px-4 rounded w-64">
+                <li><a href="product(PMS).html" target="_blank" class="block py-1">PMS (Portfolio Management Service)</a></li>
+                <li><a href="product(IAP).html" target="_blank" class="block py-1">IAP (Investment Advisory Portfolios)</a></li>
+              </ul>
+            </li>
+
+            <li class='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
+                class='hover:text-green-600 block font-semibold transition-all'>Learn and Blogs</a>
+            </li>
+            <li class='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
+                class='hover:text-green-600 block font-semibold transition-all'>About</a>
+            </li>
+          </ul>
+        </div>
+        <style>
+          .dropdown {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+          }
+        </style>
+
+        <div class='flex ml-auto'>
+          <a href="login.html" target="_blank">
+            <button
+              class='px-6 py-3 rounded-xl text-white bg-green-900 transition-all hover:bg-orange-800'>Login</button>
+          </a>
+          <button id="toggleOpen" class='lg:hidden ml-7'>
+            <svg class="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="relative">
+      <div class="px-4 sm:px-10">
+        <div class="mt-16 max-w-4xl mx-auto text-center relative z-10">
+          <h1 class="md:text-6xl text-4xl  text-green-800 font-bold mb-6 md:!leading-[75px]">Explore High-Growth
+            Investment
+            Opportunities with AIFs!</h1>
+          <p class="text-lg text-gray-600">Alternative Investment Funds (AIFs) offer exclusive access to diverse asset
+            classes,
+            including venture capital, private equity, and hedge funds.</p>
+          <div class="mt-10">
+            <a href="signup.html" target="_blank">
+              <button class='px-6 py-3 rounded-xl text-white bg-green-900 transition-all hover:bg-orange-800'>
+                Start Investing Today
+              </button>
+            </a>
+          </div>
+        </div>
+        <hr class="my-12 border-gray-300" />
+      </div>
+      <img src="https://readymadeui.com/bg-effect.svg" class="absolute inset-0 w-full h-full" />
+    </div>
+
+
+    <div class="bg-green-50 px-6 py-12 font-sans">
+      <div class="lg:max-w-7xl max-w-lg mx-auto px-6 py-8 bg-white rounded-lg shadow-md">
+
+        <!-- Section 1: Introduction -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div class="max-h-80">
+            <img src="https://readymadeui.com/management-img.webp" alt="AIF Investment"
+              class="rounded-md object-cover w-full h-full" />
+          </div>
+          <div>
+            <h2 class="text-5xl font-bold text-green-700 mb-4">What is AIF?</h2>
+            <p class="text-gray-600 text-md leading-6">
+              Alternative Investment Funds (AIFs) are privately pooled investment vehicles that collect funds from
+              investors and invest in alternative asset classes beyond traditional stocks and bonds.
+              They are ideal for High-Net-Worth Individuals (HNIs) and institutional investors seeking diversification
+              and high returns.
+            </p>
+            <p class="text-gray-600 text-md mt-4">
+              Regulated by SEBI under the Alternative Investment Funds Regulations, 2012, AIFs provide investors access
+              to exclusive financial opportunities.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 2: Key Features of AIFs -->
+        <div class="mt-12">
+          <h2 class="text-4xl font-bold text-green-700 mb-8 text-center">Features of AIFs</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+
+            <div class="p-6 bg-gray-50 rounded-lg shadow">
+              <h3 class="text-2xl font-bold text-green-600">Exclusive Investments</h3>
+              <p class="text-md text-gray-600 mt-2">Available only to HNIs and institutional investors.</p>
+            </div>
+
+            <div class="p-6 bg-gray-50 rounded-lg shadow">
+              <h3 class="text-2xl font-bold text-green-600">Diversified Portfolio</h3>
+              <p class="text-md text-gray-600 mt-2">Invests in real estate, private equity, venture capital, and hedge
+                funds.</p>
+            </div>
+
+            <div class="p-6 bg-gray-50 rounded-lg shadow">
+              <h3 class="text-2xl font-bold text-green-600">Expert Fund Management</h3>
+              <p class="text-md text-gray-600 mt-2">Managed by seasoned financial professionals.</p>
+            </div>
+
+            <div class="p-6 bg-gray-50 rounded-lg shadow">
+              <h3 class="text-2xl font-bold text-green-600">Long-Term Wealth Growth</h3>
+              <p class="text-md text-gray-600 mt-2">Focuses on capital appreciation over time.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: AIF Working Infographic -->
+        <section class="text-gray-600 body-font">
+          <h2 class="text-4xl font-bold text-green-700 mt-12 text-center">How AIFs Work</h2>
+          <div class="container px-5 py-12 mx-auto flex flex-wrap">
+            <div class="flex flex-wrap w-full">
+              <div class="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
+                <!-- Step 1: Investors -->
+                <div class="flex relative pb-12">
+                  <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                    <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                  </div>
+                  <div
+                    class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 inline-flex items-center justify-center text-white relative z-10">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M3 12l3-3m0 0l3 3m-3-3v12m3-12l3-3m0 0l3 3m-3-3v12" />
+                    </svg>
+                  </div>
+                  <div class="flex-grow pl-4">
+                    <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">
+                      <strong class="text-green-700">Investors</strong> contribute funds into the AIF pool.
+                    </h2>
+                  </div>
+                </div>
+
+                <!-- Step 2: Fund Managers -->
+                <div class="flex relative pb-12">
+                  <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                    <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                  </div>
+                  <div
+                    class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 inline-flex items-center justify-center text-white relative z-10">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M9 21V9l-6 6m6-6l6 6m-6-6h12" />
+                    </svg>
+                  </div>
+                  <div class="flex-grow pl-4">
+                    <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">
+                      <strong class="text-green-700">Fund Managers</strong> strategically invest in alternative assets.
+                    </h2>
+                  </div>
+                </div>
+
+                <!-- Step 3: Returns -->
+                <div class="flex relative pb-12">
+                  <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                    <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                  </div>
+                  <div
+                    class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 inline-flex items-center justify-center text-white relative z-10">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M4 12h16M12 4v16m-4-4h8m-8-4h8m-8-4h8" />
+                    </svg>
+                  </div>
+                  <div class="flex-grow pl-4">
+                    <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">
+                      <strong class="text-green-700">Returns</strong> are generated and distributed among investors.
+                    </h2>
+                  </div>
+                </div>
+
+                <!-- Step 4: SEBI Regulated -->
+                <div class="flex relative pb-12">
+                  <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                    <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                  </div>
+                  <div
+                    class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 inline-flex items-center justify-center text-white relative z-10">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M3 3h18v18H3V3zm9 9h6m-6-4h6m-6 8h6M7 16h1m-1-4h1m-1-4h1" />
+                    </svg>
+                  </div>
+                  <div class="flex-grow pl-4">
+                    <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">
+                      <strong class="text-green-700">SEBI Regulated</strong> for transparency and investor protection.
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex justify-center items-center">
+                <img class="lg:w-4/5 md:w-3/4 w-full max-h-[700px] object-contain rounded-lg md:mt-0 mt-6"
+                  src="IAP, PMS, AIF//Alternative-Investment-Fund-1024x556-removebg-preview.png" alt="step">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: SEBI Regulation & Compliance -->
+        <div class="">
+          <h2 class="text-4xl font-bold text-green-700 mb-4 text-center">SEBI Regulation & Compliance</h2>
+          <p class="text-center text-gray-600 text-md leading-6">
+            AIFs operate under SEBI's Alternative Investment Funds Regulations, 2012, ensuring structured and legal
+            investment practices. Investors can access SEBI-approved fund managers, promoting safety and accountability.
+          </p>
+          <div class="text-center mt-6">
+            <a href="https://www.sebi.gov.in/" target="_blank"
+              class="text-green-600 text-sm font-semibold hover:underline">
+              Learn More About SEBI Regulations
+            </a>
+          </div>
+        </div>
+
+        <!-- Section 5: Call to Action -->
+        <div class="text-center mt-10">
+          <a href="javascript:void(0);" id="investButton"
+            class="bg-green-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-green-500">
+            Start Investing in AIFs
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="font-[sans-serif]">
+      <div class="max-w-6xl mx-auto py-12 px-4">
+        <h2 class="text-green-700 text-5xl font-medium text-center mb-12">Types of AIFs</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-md:max-w-md mx-auto">
+          <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+            <div class="p-8">
+              <img width="64" height="64" src="https://img.icons8.com/cotton/64/get-cash.png" alt="get-cash" />
+              <h3 class="text-gray-800 text-xl font-semibold mb-3">Category I AIFs</h3>
+              <p class="text-gray-500 text-md leading-relaxed">Venture Capital, SME Funds, Infrastructure Funds, Social
+                Venture Funds.</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+            <div class="p-8">
+              <img width="58" height="58" src="https://img.icons8.com/arcade/64/signing-a-document.png"
+                alt="signing-a-document" class="mb-1" />
+              <h3 class="text-gray-800 text-xl font-semibold mb-3">Category II AIFs</h3>
+              <p class="text-gray-500 text-md leading-relaxed">Private Equity, Debt Funds, Real Estate Funds.</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+            <div class="p-8">
+              <img width="50" height="50" src="https://img.icons8.com/officel/80/future.png" alt="future"
+                class="mb-3" />
+              <h3 class="text-gray-800 text-xl font-semibold mb-3">Category III AIFs</h3>
+              <p class="text-gray-500 text-md leading-relaxed">Hedge Funds, PIPE (Private Investment in Public Equity).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <section class="text-gray-800 body-font bg-gradient-to-b from-orange-100 to-orange-200">
+      <h2 class="text-5xl text-center text-green-800 font-semibold mt-10">Why Invest in AIFs?</h2>
+      <div class="container px-6 py-14 mx-auto">
+
+        <!-- Higher Returns -->
+        <div class="flex items-center lg:w-3/5 mx-auto border-b pb-6 mb-6 border-gray-300 flex-col sm:flex-row">
+          <div
+            class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 flex-shrink-0 flex items-center justify-center rounded-full bg-green-100 shadow-md">
+            <img src="https://img.icons8.com/plasticine/100/economic-improvement.png" alt="economic-improvement" />
+          </div>
+          <div class="flex-grow text-center sm:text-left">
+            <h3 class="text-xl font-semibold text-gray-900">Higher Returns</h3>
+            <p class="leading-relaxed text-lg text-gray-700">Exclusive investment opportunities.</p>
+            <a class="mt-3 text-green-600 font-medium inline-flex items-center hover:text-green-700" href="#">Learn More
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Portfolio Diversification -->
+        <div class="flex items-center lg:w-3/5 mx-auto border-b pb-6 mb-6 border-gray-300 flex-col sm:flex-row-reverse">
+          <div
+            class="sm:w-32 sm:h-32 h-20 w-20 sm:ml-10 flex-shrink-0 flex items-center justify-center rounded-full bg-green-100 shadow-md">
+            <img src="https://img.icons8.com/officel/80/strategy-board.png" alt="strategy-board" />
+          </div>
+          <div class="flex-grow text-center sm:text-left">
+            <h3 class="text-xl font-semibold text-gray-900">Portfolio Diversification</h3>
+            <p class="leading-relaxed text-lg text-gray-700">Invest beyond traditional stocks and bonds.</p>
+            <a class="mt-3 text-green-600 font-medium inline-flex items-center hover:text-green-700" href="#">Learn More
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Professional Fund Management -->
+        <div class="flex items-center lg:w-3/5 mx-auto border-b pb-6 mb-6 border-gray-300 flex-col sm:flex-row">
+          <div
+            class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 flex-shrink-0 flex items-center justify-center rounded-full bg-green-100 shadow-md">
+            <img src="https://img.icons8.com/fluency/96/management.png" alt="management" />
+          </div>
+          <div class="flex-grow text-center sm:text-left">
+            <h3 class="text-xl font-semibold text-gray-900">Professional Fund Management</h3>
+            <p class="leading-relaxed text-lg text-gray-700">Managed by experts with strong market insights.</p>
+            <a class="mt-3 text-green-600 font-medium inline-flex items-center hover:text-green-700" href="#">Learn More
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Long-Term Wealth Creation -->
+        <div class="flex items-center lg:w-3/5 mx-auto pb-6 flex-col sm:flex-row-reverse">
+          <div
+            class="sm:w-32 sm:h-32 h-20 w-20 sm:ml-10 flex-shrink-0 flex items-center justify-center rounded-full bg-green-100 shadow-md">
+            <img src="https://img.icons8.com/fluency/96/stocks-growth--v1.png" alt="stocks-growth" />
+          </div>
+          <div class="flex-grow text-center sm:text-left">
+            <h3 class="text-xl font-semibold text-gray-900">Long-Term Wealth Creation</h3>
+            <p class="leading-relaxed text-lg text-gray-700">Ideal for high-net-worth individuals (HNIs).</p>
+            <a class="mt-3 text-green-600 font-medium inline-flex items-center hover:text-green-700" href="#">Learn More
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="flex justify-center mt-10">
+          <button id="learnMoreButton"
+            class="bg-green-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-300">
+            Learn More
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section class="text-gray-700 body-font bg-green-50">
+      <div class="container px-5 py-12 mx-auto">
+        <!-- Section Heading -->
+        <div class="text-center w-full mb-12">
+          <h1 class="text-4xl font-bold text-green-800 mb-4">Who Can Invest in AIFs?</h1>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            <strong class="text-green-700">Eligibility Criteria:</strong> Minimum investment of ₹1 crore. Suitable for
+            High-Net-Worth Individuals (HNIs), Institutional Investors, and Corporations.
+          </p>
+        </div>
+
+        <!-- Steps Container -->
+        <div class="max-w-3xl mx-auto">
+          <!-- Step 1 -->
+          <div class="flex relative pb-12">
+            <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+              <div class="h-full w-1 bg-gray-300"></div>
+            </div>
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center text-lg font-bold z-10">
+              1
+            </div>
+            <div class="flex-grow pl-6">
+              <div class="flex items-center">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
+                  <img src="icons8-verification.gif" class="w-12 h-12" alt="Verification">
+                </div>
+                <h2 class="text-xl font-semibold text-gray-900 ml-4">Eligibility Check</h2>
+              </div>
+              <p class="text-gray-600 mt-3">
+                Ensure you meet the minimum investment requirement of <strong class="text-green-700">₹1 crore</strong>.
+                AIFs are designed for HNIs, Institutional Investors, and Corporations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex relative pb-12">
+            <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+              <div class="h-full w-1 bg-gray-300"></div>
+            </div>
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center text-lg font-bold z-10">
+              2
+            </div>
+            <div class="flex-grow pl-6">
+              <div class="flex items-center">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
+                  <img width="48" height="48" src="https://img.icons8.com/cotton/64/catalog--v1.png" alt="Catalog">
+                </div>
+                <h2 class="text-xl font-semibold text-gray-900 ml-4">Choose an AIF Category</h2>
+              </div>
+              <p class="text-gray-600 mt-3">
+                Select between <strong>Category I, II, or III AIFs</strong> based on your investment goals and risk
+                appetite.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex relative pb-12">
+            <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+              <div class="h-full w-1 bg-gray-300"></div>
+            </div>
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center text-lg font-bold z-10">
+              3
+            </div>
+            <div class="flex-grow pl-6">
+              <div class="flex items-center">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
+                  <img width="48" height="48" src="https://img.icons8.com/cotton/64/investment--v2.png"
+                    alt="Investment">
+                </div>
+                <h2 class="text-xl font-semibold text-gray-900 ml-4">Investment & Fund Management</h2>
+              </div>
+              <p class="text-gray-600 mt-3">
+                Once invested, the <strong>fund manager</strong> allocates and manages the portfolio to maximize
+                returns.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="px-4 mt-12 sm:px-10 border-t">
+      <div class="px-4 py-8">
+        <div class="grid sm:grid-cols-2 items-center gap-16 my-6 mx-auto max-w-5xl">
+          <div>
+            <h1 class="md:text-4xl text-3xl font-extrabold">Let's Connect for AIFs</h1>
+            <p class="mt-6">Interested in Alternative Investment Funds (AIFs)? Onetimex provides expert-driven
+              investment solutions to help you grow your wealth. Fill out the form below, and our team will get in touch
+              with you.</p>
+
+            <div class="mt-12">
+              <h2 class="text-xl font-semibold">Email</h2>
+              <ul class="mt-4">
+                <li class="flex items-center">
+                  <div class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill='#28a745'
+                      viewBox="0 0 479.058 479.058">
+                      <path
+                        d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 0 1 5.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"
+                        data-original="#000000" />
+                    </svg>
+                  </div>
+                  <a href="javascript:void(0)" class="text-[#28a745] ml-3">
+                    <small class="block">Mail</small>
+                    <strong>onetimexbusiness@gmail.com</strong>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-8">
+              <h2 class="text-xl mt-4 font-semibold">Socials</h2>
+              <ul class="flex mt-4 space-x-4">
+                <li class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                  <a href="https://www.facebook.com/share/1B4Vc8y3fm/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill='#28a745'
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M6.812 13.937H9.33v9.312c0 .414.335.75.75.75l4.007.001a.75.75 0 0 0 .75-.75v-9.312h2.387a.75.75 0 0 0 .744-.657l.498-4a.75.75 0 0 0-.744-.843h-2.885c.113-2.471-.435-3.202 1.172-3.202 1.088-.13 2.804.421 2.804-.75V.909a.75.75 0 0 0-.648-.743A26.926 26.926 0 0 0 15.071 0c-7.01 0-5.567 7.772-5.74 8.437H6.812a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm.75-3.999h2.518a.75.75 0 0 0 .75-.75V6.037c0-2.883 1.545-4.536 4.24-4.536.878 0 1.686.043 2.242.087v2.149c-.402.205-3.976-.884-3.976 2.697v2.755c0 .414.336.75.75.75h2.786l-.312 2.5h-2.474a.75.75 0 0 0-.75.75V22.5h-2.505v-9.312a.75.75 0 0 0-.75-.75H7.562z"
+                        data-original="#000000" />
+                    </svg>
+                  </a>
+                </li>
+                <li class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                  <a href="https://x.com/ONETIMEX_IN?t=7EYaL7MzbXfNJgA7-xAlyQ&s=08" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="#28a745"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M18.07 2H22l-7.48 8.62L23 22h-7.93l-4.94-6.74L5.07 22H1l7.98-9.19L1 2h7.93l4.58 6.26L18.07 2Zm-1.14 18h2.09L7.28 4h-2.1l11.75 16Z">
+                      </path>
+                    </svg>
+                  </a>
+                </li>
+                <li class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                  <a href="https://www.instagram.com/onetimex.in?igsh=aTE3bmd0azVmaHg2" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill='#28a745'
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M12 9.3a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm0-1.8a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm5.85-.225a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0ZM12 4.8c-2.227 0-2.59.006-3.626.052-.706.034-1.18.128-1.618.299a2.59 2.59 0 0 0-.972.633 2.601 2.601 0 0 0-.634.972c-.17.44-.265.913-.298 1.618C4.805 9.367 4.8 9.714 4.8 12c0 2.227.006 2.59.052 3.626.034.705.128 1.18.298 1.617.153.392.333.674.632.972.303.303.585.484.972.633.445.172.918.267 1.62.3.993.047 1.34.052 3.626.052 2.227 0 2.59-.006 3.626-.052.704-.034 1.178-.128 1.617-.298.39-.152.674-.333.972-.632.304-.303.485-.585.634-.972.171-.444.266-.918.299-1.62.047-.993.052-1.34.052-3.626 0-2.227-.006-2.59-.052-3.626-.034-.704-.128-1.18-.299-1.618a2.619 2.619 0 0 0-.633-.972 2.595 2.595 0 0 0-.972-.634c-.44-.17-.914-.265-1.618-.298-.993-.047-1.34-.052-3.626-.052ZM12 3c2.445 0 2.75.009 3.71.054.958.045 1.61.195 2.185.419A4.388 4.388 0 0 1 19.49 4.51c.457.45.812.994 1.038 1.595.222.573.373 1.227.418 2.185.042.96.054 1.265.054 3.71 0 2.445-.009 2.75-.054 3.71-.045.958-.196 1.61-.419 2.185a4.395 4.395 0 0 1-1.037 1.595 4.44 4.44 0 0 1-1.595 1.038c-.573.222-1.227.373-2.185.418-.96.042-1.265.054-3.71.054-2.445 0-2.75-.009-3.71-.054-.958-.045-1.61-.196-2.185-.419A4.402 4.402 0 0 1 4.51 19.49a4.414 4.414 0 0 1-1.037-1.595c-.224-.573-.374-1.227-.419-2.185C3.012 14.75 3 14.445 3 12c0-2.445.009-2.75.054-3.71s.195-1.61.419-2.185A4.392 4.392 0 0 1 4.51 4.51c.45-.458.994-.812 1.595-1.037.574-.224 1.226-.374 2.185-.419C9.25 3.012 9.555 3 12 3Z">
+                      </path>
+                    </svg>
+                  </a>
+                </li>
+                <li class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                  <a href="https://wa.me/917045035773" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="#28a745"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.1.55 4.14 1.59 5.95L0 24l6.28-1.64a12.05 12.05 0 0 0 5.72 1.46H12c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22a9.91 9.91 0 0 1-4.9-1.27l-.35-.2-3.73.97 1-3.6-.23-.38A9.86 9.86 0 0 1 2 12C2 6.48 6.48 2 12 2c2.64 0 5.13 1.03 7.01 2.91A9.89 9.89 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.52-7.4c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.95 1.18s-.35.23-.65.08c-.3-.15-1.27-.47-2.42-1.5a9.13 9.13 0 0 1-1.67-2c-.18-.3-.02-.46.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5s.05-.38-.02-.53c-.07-.15-.67-1.62-.91-2.21-.24-.58-.48-.5-.67-.51-.18 0-.37-.02-.57-.02s-.52.07-.8.37c-.28.3-1.05 1.03-1.05 2.52s1.08 2.93 1.24 3.13c.15.2 2.13 3.25 5.17 4.56 1.98.86 2.75.93 3.72.79.57-.08 1.78-.73 2.03-1.44.25-.7.25-1.3.17-1.44-.08-.13-.27-.2-.57-.35z">
+                      </path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!------------------------form------------------->
+          <div id="investmentForm">
+            <form class="ml-auto space-y-4">
+              <input type="text" placeholder="Name" class="w-full rounded-md py-3 px-4 bg-[#f8f9ff] outline-cyan-900" />
+              <input type="email" placeholder="Email"
+                class="w-full rounded-md py-3 px-4 bg-[#f8f9ff] outline-cyan-900" />
+              <input type="tel" placeholder="Mobile Number"
+                class="w-full rounded-md py-3 px-4 bg-[#f8f9ff] outline-cyan-900" pattern="[0-9]{10}" maxlength="10" />
+              <textarea placeholder="Message" rows="6"
+                class="w-full rounded-md px-4 bg-[#f8f9ff] pt-3 outline-cyan-900"></textarea>
+              <button type="button" id="submitBtn"
+                class="w-full mt-6 px-6 py-3 rounded-xl text-white bg-green-800 transition hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-300">
+                Submit
+              </button>
+              <p id="successMessage" class="hidden mt-4 text-green-700 text-center font-semibold">
+                Your response is submitted. We'll get back to you.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-------------------footer section------------------------>
+    <footer class="bg-green-50 px-4 sm:px-10 py-8 border-t">
+      <div class="grid max-sm:grid-cols-1 max-lg:grid-cols-2 lg:grid-cols-5 lg:gap-14 max-lg:gap-8">
+        <div class="lg:col-span-2">
+          <h4 class="text-[28px] text-green-700 font-semibold mb-4">About Onetimex</h4>
+          <p class="text-gray-500">Onetimex is a one-stop solution for all investment needs, offering financial products
+            and services related
+            to the stock market. We provide insights into trading, investment strategies, and financial planning to help
+            investors make informed decisions.</p>
+
+          <div class="bg-white flex items-center px-4 py-3 rounded-md shadow-md border border-gray-300 mt-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" class="fill-gray-500 mr-3">
+              <path d="M21.71 20.29l-5.4-5.4A8 8 0 1016 16l5.4 5.4a1 1 0 001.41-1.41zM10 16a6 6 0 116-6 6 6 0 01-6 6z">
+              </path>
+            </svg>
+            <input type='email' placeholder='Search Onetimex...'
+              class="w-full outline-none bg-transparent text-gray-700 placeholder-gray-500 text-[15px]" />
+          </div>
+
+        </div>
+
+        <div>
+          <h4 class="text-xl font-semibold mb-6">Services</h4>
+          <ul class="space-y-5">
+            <li><a href="signup.html" target="_blank" class="hover:text-green-600">Open Demat Account</a></li>
+            <li><a href="javascript:void(0)" class="hover:text-green-600">Financial Services</a></li>
+            <li><a href="javascript:void(0)" class="hover:text-green-600">Types of Traders</a></li>
+            <li><a href="javascript:void(0)" class="hover:text-green-600">Unlisted and Listed IPO</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-semibold mb-6">Resources</h4>
+          <ul class="space-y-5">
+            <li><a href="javascript:void(0)" class="hover:text-green-600">Webinars</a>
+            </li>
+            <li><a href="javascript:void(0)" class="hover:text-green-600">Ebooks</a>
+            </li>
+            <li><a href="javascript:void(0)" class="hover:text-green-600">Templates</a>
+            </li>
+            <li><a href="javascript:void(0)" class="hover:text-green-600">Tutorials</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-semibold mb-6">About Us</h4>
+          <ul class="space-y-5">
+            <li><a href="javascript:void(0)" class="hover:text-green-600">Our Story</a>
+            </li>
+            <li><a href="javascript:void(0)" class="hover:text-green-600">Mission and
+                Values</a></li>
+            <li><a href="javascript:void(0)" class="hover:text-green-600">Team</a></li>
+            <li><a href="javascript:void(0)" class="hover:text-green-600">Testimonials</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="my-8" />
+
+      <p class="text-center">
+        Copyright © 2025
+        <a href="main.html" target="_blank" class="hover:underline text-green-700 mx-1">Onetimex</a>
+        All Rights Reserved.
+      </p>
+    </footer>
+  </div>
+
+  <script>
+
+    var toggleOpen = document.getElementById('toggleOpen');
+    var toggleClose = document.getElementById('toggleClose');
+    var collapseMenu = document.getElementById('collapseMenu');
+
+    function handleClick() {
+      if (collapseMenu.style.display === 'block') {
+        collapseMenu.style.display = 'none';
+      } else {
+        collapseMenu.style.display = 'block';
+      }
+    }
+
+    toggleOpen.addEventListener('click', handleClick);
+    toggleClose.addEventListener('click', handleClick);
+
+  </script>
+  <script src="productjavascript.js"></script>
+</body>
+
+</html>
